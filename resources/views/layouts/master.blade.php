@@ -23,7 +23,7 @@
     <title>
       Kamaz-61.ru | @yield('title')
     </title>
-        
+    <script src="//code-ya.jivosite.com/widget/9XdRiltUaP" async></script>
     </head>
     <body>
         <div class="page">
