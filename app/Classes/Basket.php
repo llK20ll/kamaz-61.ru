@@ -18,7 +18,6 @@ class Basket
             if(Auth::check()){
                 $data['user_id'] = Auth::id();
             }
-
             $this->order = Order::create($data);
             session(['orderId' => $this->order->id]);
         } else {

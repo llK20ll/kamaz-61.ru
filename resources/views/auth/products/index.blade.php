@@ -43,7 +43,17 @@
             </td>
 
             <td class="align-middle w-20 text-truncate" style="vertical-align: middle;"><a href="{{route('product', [$product->category, $product])}}">{{ $product->model ?? ''}}</a> </td>
-            <td class="align-middle" style="vertical-align: middle;">{{ number_format( $product->price ?? '' )}} руб.</td>
+            
+            
+            <td class="align-middle" style="vertical-align: middle;">
+                @isset($product->new_price)               
+                <span class="badge badge-success" style="font-size: 17px">{{ number_format($product->new_price)}}  руб.</span>
+                @else
+                <span>{{ number_format( $product->price ?? '' )}} руб.</span>
+                @endisset
+            </td>
+
+
             <td class="align-middle" style="vertical-align: middle;">{{ $product->category->title }}</td>
 
 
