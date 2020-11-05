@@ -16,7 +16,7 @@
                     <span
                     @isset($item->new_price)
                     style="text-decoration: line-through;"
-                      
+                    @else
                     @endisset 
                       
                       >{{ number_format($item->price)}}</span> руб.
@@ -25,8 +25,7 @@
                       @isset($item->new_price)
                       <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
                       <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
-                      @else
-                      <span><hr class="mb-2"></span>
+                      
                       @endisset
                    
                     
