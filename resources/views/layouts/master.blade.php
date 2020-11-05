@@ -206,7 +206,7 @@
                             <a href="https://vk.com/kamaz61"><i class="fa fa-vk"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>                
                             <a href="#"><i class="fa fa-instagram"></i></a>                
-                            <a href="#"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.youtube.com/channel/UCDuWKjh0BT4Xf0PBQj137-Q"><i class="fa fa-youtube"></i></a>
                             <a href="#"><i class="fa fa-google-plus"></i></a>
                         </div>
                 
