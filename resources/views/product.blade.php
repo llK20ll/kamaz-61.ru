@@ -64,7 +64,7 @@
                 </div> 
    --}}
 
-
+{{-- таблиц характеристик --}}
     <div class="card-body p-0 mt-1">
         <div class="row">
 
@@ -72,7 +72,7 @@
 
                     <img src="
                     {{ Storage::url($item->image) }}
-                    " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1; ">
+                    " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
                 
                 <div class="row m-0">
                     <div class="card m-3 w-100 card-info rg-text">
@@ -487,4 +487,5 @@
         </div>
     </div>
 
+{{-- таблиц характеристик --}}
 @endsection  
