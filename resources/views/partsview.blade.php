@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div class="p-3  w-100 h-100">
+<div class="p-3 w-100 h-100">
     <h3 class="text-center">{{$parts->title}}</h3>
     <div class="tbl-content-view bg-light">
         <table class="table">
