@@ -1,5 +1,5 @@
 
-  <div class="category-card text-center col-6 col-lg-4 p-2">    
+  <div class="category-card text-center col-6 col-lg-4 p-3">    
         <a class=" text-center" href="{{ route('category', $category->code) }}">
           
         <img class="card-img-top" alt="{{$category->title}}" src="     
