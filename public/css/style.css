@@ -353,9 +353,20 @@ div.form-inline form {
 .rightimg  {
     width: 250px; 
     height: 180px;
-    margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
+    margin: 7px 7px 7px 7px; /* Отступы вокруг картинки */
     object-fit: cover;
     object-position: center;
+}
+.rightimgp{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+.service__images{
+align-items: center;
 }
 .filters {
     margin: 0;
