@@ -1,5 +1,5 @@
-<div class="col text-center col-xl-4 col-lg-6 col-md-6 col-lg-3 mt-2 mb-3">
-    <div class="card text-left p-1" >
+<div class="col text-center col-xl-4 col-lg-6 col-md-6 col-lg-3 mt-2 mb-3 px-1">
+    <div class="card text-left" >
       <a href="{{route('product', [$product->category, $product])}}"><h5 class="card-title text-truncate">{{$product->model}}</h5></a>
       
         <div class="cards-image">
