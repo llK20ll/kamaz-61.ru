@@ -73,7 +73,7 @@
 
         </tbody>
     </table>
-    {{ $products->links()}}
-    <a class="btn btn-primary cardbtn" type="button" href="{{ route('products.create')}}">Добавить товар</a>
+    {{ $products->links('vendor.pagination.bootstrap-4') }}
+    <a class="btn btn-primary cardbtn mt-3" type="button" href="{{ route('products.create')}}">Добавить товар</a>
 </div>
 @endsection

@@ -26,9 +26,8 @@ class MainController extends Controller
         
         $categories = Category::get();
         $category = Category::where('code', $code)->first();
-        
-        $products = Product::where('category_id', $category->id)->paginate(6); 
-        return view('category', compact('categories' ,'category', 'products'));
+        $products = Product::where('category_id', '=', $category->id)->paginate(9); 
+        return view('category', compact('categories','category', 'products'));
     }
 
     public function product($category, $product = null){
@@ -62,8 +61,8 @@ class MainController extends Controller
     }
 
     public function contact(Request $request){
-        return 'Okay';
-        // dd($request->all());
+        // return 'Okay';
+        dd($request->all());
     }
 
     public function privacy(){

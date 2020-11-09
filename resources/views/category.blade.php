@@ -50,12 +50,12 @@
 <div class="container p-0">
   <div class="row justify-content-around">
       
-    @foreach ($category->products as $product)
-    @include('layouts.card', ['category' => $category])
-    @endforeach
-    {{-- @foreach ($products as $product)
+    {{-- @foreach ($category->products as $product)
     @include('layouts.card', ['category' => $category])
     @endforeach --}}
+    @foreach ($products as $product)
+    @include('layouts.card', ['category' => $category])
+    @endforeach
     </div>
 </div>   
 
