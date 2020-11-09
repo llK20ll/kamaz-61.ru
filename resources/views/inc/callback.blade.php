@@ -15,7 +15,7 @@
                 </button>
             </div>
             <div class="modal-body">
-            <form action="{{ route('contact-form') }}" class="form" id="form" name="form" method="POST">
+            <form action="{{ route('contact-form') }}" class="form" id="contactform" name="form" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">Имя<span class="redStar">*</span>:</label><br>

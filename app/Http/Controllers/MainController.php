@@ -61,8 +61,9 @@ class MainController extends Controller
         return view('contacts');
     }
 
-    public function contact(){
-        return 'Okey';
+    public function contact(Request $request){
+        return 'Okay';
+        // dd($request->all());
     }
 
     public function privacy(){
