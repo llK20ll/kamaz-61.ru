@@ -73,7 +73,11 @@
 
         </tbody>
     </table>
+    <div class="row justify-content-center">
+        <div class="col">
     {{ $products->links('vendor.pagination.bootstrap-4') }}
+        </div>
+    </div>
     <a class="btn btn-primary cardbtn mt-3" type="button" href="{{ route('products.create')}}">Добавить товар</a>
 </div>
 @endsection

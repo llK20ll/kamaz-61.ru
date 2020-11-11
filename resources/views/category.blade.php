@@ -60,7 +60,7 @@
 </div>   
 
 <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col">
         {{ $products->links('vendor.pagination.bootstrap-4')}}
     </div>    
 </div>      
