@@ -64,8 +64,12 @@
             <br>
             <div class="input-group row">
                 <label for="model" class="col-sm-2 col-form-label">Модель: </label>
-                <div class="col-sm-6">                   
-                    <input type="text" class="form-control" name="model" id="model" value="@isset($product){{$product->model}} @endisset">
+                <div class="col-sm-6">   
+                <input type="text" class="form-control" name="model" id="model" value="{{ old('model', isset($product) ?  $product->model : null)}}">
+                @error('model')
+                <div class="alert-danger">{{ $message }}</div>
+                @enderror  
+                    {{-- <input type="text" class="form-control" name="model" id="model" value="@isset($product){{$product->model}} @endisset"> --}}
                 </div>
             </div>
             <br>
@@ -172,7 +176,13 @@
             <div class="input-group row">
                 <label for="price" class="col-sm-2 col-form-label">Цена: </label>
                 <div class="col-sm-6">                    
-                    <input type="text" class="form-control" name="price" id="price" value="@isset($product){{$product->price}} @endisset">
+                    <input type="text" class="form-control" name="price" id="price" value="{{ old('price', isset($product) ?  $product->price : null)}}">
+
+                    @error('price')
+                    <div class="alert-danger">{{ $message }}</div>
+                    @enderror  
+                 
+
                 </div>
             </div>
             <br>
@@ -204,7 +214,7 @@
             <br>
 
             <div class="input-group row">
-                <label for="image" class="col-sm-2 col-form-label">Новая артинка: </label>
+                <label for="image" class="col-sm-2 col-form-label">Новая картинка: </label>
                 <div class="col-sm-10">
                     <label class="btn cardbtn btn-file">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder2-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

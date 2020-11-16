@@ -28,4 +28,11 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric|min:1',
         ];
     }
+    public function messages()
+    {
+        return [
+            'required' => 'Поле обязательно для заполнения',
+            'min' => 'Поле должно иметь не менее :min символов'
+        ];
+    }
 }

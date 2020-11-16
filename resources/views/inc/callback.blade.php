@@ -34,7 +34,7 @@
                             <button class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Закрыть</button>
                         </div>
                         <div>
-                        Нажимая кнопку "отправить" вы соглашаетесь с <a class="privacy_link" href="{{route('privacy')}}">условиями</a> об обработки персональных данных.
+                        Нажимая кнопку "отправить" вы соглашаетесь с <a class="privacy_link" href="{{route('privacy')}}">условиями</a> обработки персональных данных.
                         </div>
                     </form>
             </div>

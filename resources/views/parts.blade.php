@@ -15,7 +15,7 @@
 {{-- @include('inc.category_panel') --}}
 {{-- >панель категорий --}}
 
-<div class="container pt-4">
+<div class="container pt-3">
 
     <h1 class="text-center pt-3">Запчасти</h1>
 
@@ -23,11 +23,11 @@
 
 <!--Accordion wrapper-->
     <div class="accordion md-accordion accordion-3 z-depth-1-half w-s" id="accordionEx194" role="tablist" aria-multiselectable="true">
-
-        <hr class="mb-0">
+{{-- 
+        <hr class="mb-0"> --}}
 
         <!-- Accordion card -->
-        <div class="ml-5">
+        <div class="ml-2">
 
             <!-- Card header -->
             <div class="card-header" role="tab" id="heading4">
@@ -59,7 +59,7 @@
         <!-- Accordion card -->
 
         <!-- Accordion card -->
-        <div class="ml-5">
+        <div class="ml-2">
 
             <!-- Card header -->
             <div class="card-header" role="tab" id="heading5">
@@ -115,7 +115,7 @@
         <!-- Accordion card -->
 
         <!-- Accordion card -->
-        <div class="ml-5">
+        <div class="ml-2">
 
             <!-- Card header -->
             <div class="card-header" role="tab" id="heading6">

@@ -20,7 +20,7 @@ Route::middleware(['auth'])->group(function(){
         'as' => 'person.',
     ], function () {
         Route::get('/orders', 'OrderController@index')->name('orders.index');            
-        Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');  
+        Route::get('/orders/{order}', 'OrderController@show')->name('orders.show'); 
     });
     Route::group([
         'namespace' => 'App\Http\Controllers\Admin',
