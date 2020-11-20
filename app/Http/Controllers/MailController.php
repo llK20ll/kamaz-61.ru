@@ -11,16 +11,20 @@ class MailController extends Controller
 {
     public function contact(Request $request){
         $lastname = $request->lastname;
-        if(isset($lastname)) dd($lastname);
+        if(isset($lastname)){              
+            return round('index');
+        } 
+        else {
 
-        $name = $request->name;
-        $phone = $request->phone;
-        $msg = $request->msg;   
+            $name = $request->name;
+            $phone = $request->phone;
+            $msg = $request->msg;   
 
-        $mail = config('mail.from.address');
+            $mail = config('mail.from.address');
 
-        Mail::to($mail)->send(new CallBackMail($name, $phone, $msg));
-        session()->flash('success', 'Ваш заявка принята, с вами свяжутся в самое ближайшее время.');     
-        return redirect()->back();
+            Mail::to($mail)->send(new CallBackMail($name, $phone, $msg));
+            session()->flash('success', 'Ваш заявка принята, с вами свяжутся в самое ближайшее время.');     
+            return redirect()->back();
+        }
     }
 }
