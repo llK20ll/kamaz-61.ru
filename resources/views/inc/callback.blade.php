@@ -26,8 +26,8 @@
                             <input id="phone" type="text" class="form-control" name="phone" placeholder="Номер телефона">
                         </div>
                         <div class="form-group">
-                            <label for="message">Сообщение:</label><br>
-                            <textarea name="message" id="message" class="form-control" placeholder="Ваше сообщение"></textarea> 
+                            <label for="msg">Сообщение:</label><br>
+                            <textarea id="msg" class="form-control" name="msg" placeholder="Ваше сообщение"></textarea> 
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn cardbtn"><span class="text-button">Отправить</span></button>

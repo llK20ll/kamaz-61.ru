@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Welcome;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Part;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -32,7 +34,7 @@ class MainController extends Controller
 
     public function product($category, $product = null){
         $cat = Category::where('id', $category)->first();
-        $item = Product::where('id', $product)->first();
+        $item = Product::where('id', $product)->firstOrFail();
         return view('product', compact('item', 'cat'));
     }
 
@@ -58,11 +60,6 @@ class MainController extends Controller
 
     public function contacts(){
         return view('contacts');
-    }
-
-    public function contact(Request $request){
-        // return 'Okay';
-        dd($request->all());
     }
 
     public function privacy(){

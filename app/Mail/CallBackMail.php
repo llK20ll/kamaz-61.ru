@@ -7,24 +7,25 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Welcome extends Mailable
+class CallBackMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
     protected $name;
-    protected $email;
-    protected $pass;
-    
+    protected $phone;
+    protected $message;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email, $pass)
+    public function __construct($name, $phone, $msg)
     {
         $this->name = $name;
-        $this->email = $email;
-        $this->pass = $pass;
+        $this->phone = $phone;
+        $this->msg = $msg;
     }
 
     /**
@@ -34,10 +35,12 @@ class Welcome extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome')->with([
+        return $this->view('emails.request_callback')
+        ->with([
             'name' => $this->name,
-            'email' => $this->email,
-            'pass' => $this->pass,            
-        ]);
+            'phone' => $this->phone,
+            'msg' => $this->msg,
+        ])
+        ->subject('Requested a call back');
     }
 }

@@ -20,10 +20,15 @@ class Product extends Model
 
     public function getPriceForCount()
     {
-        if(!is_null($this->pivot)){
-            return $this->pivot->count * $this->price;
+        $cur_price = $this->price;
+        if(isset($this->new_price)){
+            $cur_price = $this->new_price;
         }
-        return $this->price;
+
+        if(!is_null($this->pivot)){
+            return $this->pivot->count * $cur_price;
+        }
+        return $cur_price;
     }
 
 

@@ -2,9 +2,11 @@
 
 namespace App\Classes;
 
+use App\Mail\OrderCreated;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class Basket
 {
@@ -30,12 +32,13 @@ class Basket
         return $this->order;
     }
 
-    public function saveOrder($name, $phone)
-    {
+    public function saveOrder($name, $phone, $email)
+    {   
+        // Mail::to($email)->send(new OrderCreated($name));
         return $this->order->saveOrder($name, $phone);
     }
 
-    protected function getPivotRow( $product)
+    protected function getPivotRow($product)
     {
        return $this->order->products()->where('product_id', $product->id)->first()->pivot;
     }

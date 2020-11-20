@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderCreated;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BasketController extends Controller
 {    
@@ -21,19 +23,22 @@ class BasketController extends Controller
 
     public function basketConfirm(Request $request)
     {
+        $email = Auth::check() ? Auth::user()->email : $request->email;
+
         $orderId = session('orderId');
         if(is_null($orderId)){
             return redirect()->route('index');
         }
         $order = Order::find($orderId);
-        $success = $order->saveOrder($request->name, $request->phone);
+        $success = $order->saveOrder($request->name, $request->phone, $email);
 
+        
         if($success){
+            Mail::to($email)->send(new OrderCreated($request->name));
             session()->flash('success', 'Ваш заказ принят в обработку');
         }else{
             session()->flash('warning', 'Произошла ошибка');
         }
-
 
         return redirect()->route('index');
     }

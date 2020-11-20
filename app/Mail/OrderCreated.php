@@ -7,24 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Welcome extends Mailable
+class OrderCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
+
     protected $name;
-    protected $email;
-    protected $pass;
-    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email, $pass)
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->email = $email;
-        $this->pass = $pass;
     }
 
     /**
@@ -34,10 +30,6 @@ class Welcome extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome')->with([
-            'name' => $this->name,
-            'email' => $this->email,
-            'pass' => $this->pass,            
-        ]);
+        return $this->view('emails.order_created', ['name' => $this->name]);
     }
 }

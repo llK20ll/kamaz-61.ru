@@ -26,14 +26,14 @@ class Order extends Model
         return $sum;
     }    
 
-    public function getFullCount()
-    {
-        $count = 0;
-        foreach ($this->products as $product){
-            $count++;
-        }
-        return $count;
-    }
+    // public function getFullCount()
+    // {
+    //     $count = 0;
+    //     foreach ($this->products as $product){
+    //         $count++;
+    //     }
+    //     return $count;
+    // }
 
     public function saveOrder($name, $phone)
     {

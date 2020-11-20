@@ -49,10 +49,7 @@ Route::get('/parts','App\Http\Controllers\MainController@parts')->name('parts');
 Route::get('/parts/{parts_code}','App\Http\Controllers\MainController@partsview')->name('partsview');
 Route::get('/news', 'App\Http\Controllers\MainController@news')->name('news');
 
-Route::post('/contact/submit','App\Http\Controllers\MainController@contact')->name('contact-form');
-
-
-
+Route::post('/contact/submit','App\Http\Controllers\MailController@contact')->name('contact-form');
 
 Route::group(['prefix' => 'basket',], function () {
     Route::post('/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add');
@@ -69,7 +66,7 @@ Route::group(['prefix' => 'basket',], function () {
 });
 
 Route::get('/{category}','App\Http\Controllers\MainController@category')->name('category');
-Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@product')->name('product');
+Route::get('/{category}/{product}', 'App\Http\Controllers\MainController@product')->name('product');
 
 
 

@@ -40,8 +40,7 @@
             </div>
 
             <!-- Card body -->
-            <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4"
-            data-parent="#accordionEx194">
+            <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx194">
                 <div class="card-body pt-4">
                     <a class="dropdown-item" href="parts/Engine_parts1"> • Детали двигателя</a>
                     <a class="dropdown-item" href="parts/Engine_power_system"> • Система питания двигателя</a>
