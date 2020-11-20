@@ -70,10 +70,49 @@
 
             <div class="col-sm-4 p-1">
 
-                    <img src="
+                    {{-- <img src="
                     {{ Storage::url($item->image) }}
                     " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
                 
+ --}}
+
+
+                    <!-- Кнопка, открывающее модальное окно -->
+                    <button type="button" data-toggle="modal" data-target="#myModal">
+                        <img src="
+                        {{ Storage::url($item->image) }}
+                        " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
+                    </button>
+                    
+                    <!-- Модальное окно -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            
+                            </div>
+                            <div class="modal-body">
+                                <img src="
+                                {{ Storage::url($item->image) }}
+                                " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
+                            </div>
+                            {{-- <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                            <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                            </div> --}}
+                        </div>
+                        </div>
+                    </div>  
+
+
+
+
+
+
                 <div class="row m-0">
                     <div class="card m-3 w-100 card-info rg-text">
 
