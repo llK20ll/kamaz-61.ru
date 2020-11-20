@@ -23,7 +23,7 @@
                         </div>
 
                             {{-- --- --}}
-                            <input id="lastname" type="text" class="form-control" name="lastname" value="" placeholder="Фамилия">
+                            <input id="lastname" style="display: none" type="text" class="form-control" name="lastname" value="" placeholder="Фамилия">
                             {{-- --- --}}
 
                         <div class="form-group">
