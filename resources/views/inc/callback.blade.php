@@ -21,6 +21,11 @@
                             <label for="name">Имя<span class="redStar">*</span>:</label><br>
                             <input id="name" type="text" class="form-control" name="name" placeholder="Ваше имя">
                         </div>
+
+                            {{-- --- --}}
+                            <input id="lastname" style="display: none" type="text" class="form-control" name="lastname" value="" placeholder="Фамилия">
+                            {{-- --- --}}
+
                         <div class="form-group">
                             <label for="phone">Телефон<span class="redStar">*</span>:</label><br>
                             <input id="phone" type="text" class="form-control" name="phone" placeholder="Номер телефона">

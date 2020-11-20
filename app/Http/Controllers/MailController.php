@@ -10,11 +10,12 @@ use Illuminate\Support\Facades\Redirect;
 class MailController extends Controller
 {
     public function contact(Request $request){
+        $lastname = $request->lastname;
+        if(isset($lastname)) dd($lastname);
+
         $name = $request->name;
         $phone = $request->phone;
-        $msg = $request->msg;
-        
-        
+        $msg = $request->msg;   
 
         $mail = config('mail.from.address');
 
