@@ -98,7 +98,7 @@
                             <div class="modal-body">
                                 <img src="
                                 {{ Storage::url($item->image) }}
-                                " alt="{{ $item->model }}" class="p-3" style="width: 95%; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
+                                " alt="{{ $item->model }}" class="p-3" style="width: 700px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
                             </div>
                             {{-- <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
