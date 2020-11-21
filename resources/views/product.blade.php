@@ -6,11 +6,11 @@
 
         <div class="wrapper p-4">
             <div class="row">
-                <div class="col block__item">
+                <div class="block__item">
                     <div>Модель: {{ $item->model }}</div>
                 </div>
 
-                <div class="col block__item">
+                <div class= "block__item">
                    
                         Цена:
                     <span
@@ -21,7 +21,8 @@
                       
                       >{{ number_format($item->price)}}</span> руб.
                     </div>
-                    <div class="col block__item">
+
+                    <div class="block__item">
                       @isset($item->new_price)
                       <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
                       <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
@@ -30,7 +31,7 @@
                     </div>
                 
                 
-                <div class="col block__item">
+                <div class="block__item">
                     <form action="{{route('basket-add', $item)}}" method="POST">
                         <button type="submit" class="btn btn-primary mb-0 block__btn" role="button" title="Поместить в корзину">
                             В корзину 

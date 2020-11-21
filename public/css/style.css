@@ -382,7 +382,7 @@ div.filters {
     overflow: hidden;
     min-height: 100%;
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: #c8cddd;
     border: 1px solid #6c7c99;
 }
@@ -403,6 +403,7 @@ div.filters {
 }
 .block__item{   
     margin: auto;
+    margin-top: 5px;
     font-size: 18px;
     color: #000;
     font-weight: 700;
