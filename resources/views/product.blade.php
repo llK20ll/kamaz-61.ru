@@ -4,8 +4,8 @@
 
 @section('content')
 
-        <div class="wrapper p-2">
-            <div class="block__row">
+        <div class="wrapper p-4">
+            <div class="row">
                 <div class="col block__item">
                     <div>Модель: {{ $item->model }}</div>
                 </div>
@@ -17,19 +17,17 @@
                     @isset($item->new_price)
                     style="text-decoration: line-through;"
                     @else
-                    @endisset                       
+                    @endisset 
+                      
                       >{{ number_format($item->price)}}</span> руб.
-                </div>
-
-                <div class="col block__item">
-                    @isset($item->new_price)
-                    <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-                    <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
-                    
-                    @endisset
-                
-                
-                </div>
+                    </div>
+                    <div class="col block__item">
+                      @isset($item->new_price)
+                      <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
+                      <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
+                      
+                      @endisset
+                    </div>
                 
                 
                 <div class="col block__item">
