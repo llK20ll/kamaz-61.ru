@@ -406,7 +406,7 @@ div.filters {
     font-size: 18px;
     color: #000;
     font-weight: 700;
-    margin: auto;
+    padding-right: 5px;
 }
 .block__price{
     padding: 1px;
