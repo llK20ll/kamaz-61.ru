@@ -402,9 +402,8 @@ div.filters {
     /* border: 1px solid #6c7c99; */
     opacity: 1;
 }
-.block__item{
-   
-    padding: 18px;
+.block__item{   
+    margin: auto;
     font-size: 18px;
     color: #000;
     font-weight: 700;
@@ -537,4 +536,7 @@ margin: 0 10px 0 10px ;
     max-width: 300px;
     object-fit: cover;
     position: relative;
+}
+.product__img{
+    
 }

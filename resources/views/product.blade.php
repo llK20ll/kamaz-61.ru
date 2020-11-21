@@ -4,7 +4,7 @@
 
 @section('content')
 
-        <div class="wrapper p-4">
+        <div class="wrapper p-2">
             <div class="row">
                 <div class="col block__item">
                     <div>Модель: {{ $item->model }}</div>
@@ -20,16 +20,16 @@
                     @endisset 
                       
                       >{{ number_format($item->price)}}</span> руб.
-                    </div>
-                    <div class="col block__item">
-                      @isset($item->new_price)
-                      <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-                      <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
-                      
-                      @endisset
-                   
+                </div>
+                <div class="col block__item">
+                    @isset($item->new_price)
+                    <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
+                    <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
                     
-                    </div>
+                    @endisset
+                
+                
+                </div>
                 
                 
                 <div class="col block__item">
@@ -96,9 +96,9 @@
                             
                             </div>
                             <div class="modal-body">
-                                <img src="
+                                <img class="product__img" src="
                                 {{ Storage::url($item->image) }}
-                                " alt="{{ $item->model }}" class="p-3" style="width: 700px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
+                                " alt="{{ $item->model }}" class="p-3" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
                             </div>
                             {{-- <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
