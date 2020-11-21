@@ -78,11 +78,11 @@
 
 
                     <!-- Кнопка, открывающее модальное окно -->
-                    <button type="button" data-toggle="modal" data-target="#myModal">
+                    <div data-toggle="modal" data-target="#myModal">
                         <img src="
                         {{ Storage::url($item->image) }}
                         " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
-                    </button>
+                    </div>
                     
                     <!-- Модальное окно -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
