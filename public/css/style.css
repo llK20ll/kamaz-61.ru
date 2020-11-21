@@ -394,9 +394,7 @@ div.filters {
 .block__row{
     display: flex;
     justify-content: space-between;
-    
-    border: 1px solid #6c7c99;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 .block__column{
     /* border: 1px solid #6c7c99; */
@@ -407,7 +405,7 @@ div.filters {
     font-size: 18px;
     color: #000;
     font-weight: 700;
-    margin-left: 10px;
+    margin: auto;
 }
 .block__price{
     padding: 1px;

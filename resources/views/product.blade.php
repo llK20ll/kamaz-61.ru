@@ -5,7 +5,7 @@
 @section('content')
 
         <div class="wrapper p-2">
-            <div class="row">
+            <div class="block__row">
                 <div class="col block__item">
                     <div>Модель: {{ $item->model }}</div>
                 </div>
@@ -17,10 +17,10 @@
                     @isset($item->new_price)
                     style="text-decoration: line-through;"
                     @else
-                    @endisset 
-                      
+                    @endisset                       
                       >{{ number_format($item->price)}}</span> руб.
                 </div>
+
                 <div class="col block__item">
                     @isset($item->new_price)
                     <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
