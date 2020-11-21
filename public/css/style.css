@@ -394,7 +394,7 @@ div.filters {
 .block__row{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
     border: 1px solid #6c7c99;
     margin: 0px 0px 0px 0px;
 }
@@ -413,7 +413,7 @@ div.filters {
 }
 .block__price_row{
     display: flex; 
-    align-items: center;
+    
 }
 .block__price_item{
 margin: 0 10px 0 10px ;
