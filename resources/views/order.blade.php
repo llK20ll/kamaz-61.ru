@@ -35,7 +35,7 @@
                 @endguest
                 <br>
                 @csrf
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <input type="submit" class="btn btn-outline-default cardbtn text-center" value="Подтвердить заказ">
                 </div>
             </div>

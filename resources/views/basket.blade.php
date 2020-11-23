@@ -74,7 +74,7 @@
                 </tbody>
             </table>
 
-            <div class="text-center mt-1 mb-4 " role="group">
+            <div class="text-center mt-1 mb-5 " role="group">
                 <a type="button" class="btn btn-outline-primary cardbtn" href="{{ route('basket-place')}}">Оформить заказ</a>
             </div>
         </div>
