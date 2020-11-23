@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 class Basket
 {
     protected $order;
+    protected $basketCount;
 
     public function __construct($createOrder = false)
     {
@@ -54,7 +55,6 @@ class Basket
                 $pivotRow->update();
             }
         }
-
         Order::changeFullSum(-$product->price);
     }
 
@@ -70,6 +70,6 @@ class Basket
         }
         
         Order::changeFullSum($product->price);
-
+        
     }
 }

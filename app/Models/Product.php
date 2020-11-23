@@ -30,6 +30,4 @@ class Product extends Model
         }
         return $cur_price;
     }
-
-
 }
