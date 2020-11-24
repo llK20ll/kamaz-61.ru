@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', $cat->title . ' | КАМАЗ - ' . $item->model . ' - цены, фото, технические характеристики у официального дилера КАМАЗ')
+@section('title', $cat->title . ' | КАМАЗ - ' . $item->model . ' - продажа, цены, фото, технические характеристики у официального дилера КАМАЗ')
 
 @section('content')
 
