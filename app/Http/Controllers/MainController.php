@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
-    public function index(){
-        // $products = Product::get();
+    public function index(){       
         $categories = Category::get();
 
         return view('index', compact('categories'));
@@ -28,7 +27,7 @@ class MainController extends Controller
         
         $categories = Category::get();
         $category = Category::where('code', $code)->first();
-        $products = Product::where('category_id', '=', $category->id)->paginate(9); 
+        $products = Product::where('category_id', '=', $category->id)->orderBy('price')->paginate(9); 
         return view('category', compact('categories','category', 'products'));
     }
 
