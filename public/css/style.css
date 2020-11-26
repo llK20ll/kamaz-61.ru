@@ -138,6 +138,12 @@ ul li nav-item:hover {
 .header-phone{
     text-align: center; 
 }
+.header-search{
+    padding-top: 10px;
+    padding-right: 10px;
+    display: block;
+}
+
 .header-phone a{
     display: block;
 }
@@ -545,4 +551,7 @@ margin: 0 10px 0 10px ;
     display: block;
     height: auto;
     max-width: 100%;    
+}
+.serchresult__img{
+    border: 1px solid black;
 }

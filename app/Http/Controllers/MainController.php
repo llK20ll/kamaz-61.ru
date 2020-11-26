@@ -17,7 +17,7 @@ class MainController extends Controller
 
         return view('index', compact('categories'));
     }
-
+    
     public function categories(){
         $categories = Category::get();
         return view('categories', compact('categories'));
@@ -36,6 +36,7 @@ class MainController extends Controller
         $item = Product::where('id', $product)->firstOrFail();
         return view('product', compact('item', 'cat'));
     }
+
 
 
     public function leasing(){

@@ -39,8 +39,12 @@ Route::middleware(['auth'])->group(function(){
 
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
+
+
 Route::get('/categories', 'App\Http\Controllers\MainController@categories')->name('categories');
 Route::get('/leasing','App\Http\Controllers\MainController@leasing')->name('leasing');
+
+Route::get('/search', 'App\Http\Controllers\SearchController@search')->name('search');
 
 Route::get('/service','App\Http\Controllers\MainController@service')->name('service');
 Route::get('/contacts','App\Http\Controllers\MainController@contacts')->name('contacts');
@@ -67,7 +71,6 @@ Route::group(['prefix' => 'basket',], function () {
 
 Route::get('/{category}','App\Http\Controllers\MainController@category')->name('category');
 Route::get('/{category}/{product}', 'App\Http\Controllers\MainController@product')->name('product');
-Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index');
 
 
 

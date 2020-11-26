@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 {{-- панель категорий< --}}  
 @include('inc.category_panel')
 {{-- >панель категорий --}}

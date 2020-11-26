@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Kamaz-61.ru | Запчасти | ' . $parts->title )
+@section('title', 'Kamaz-61.ru | Запчасти - продажа | ' . $parts->title )
 
 @section('content')
 

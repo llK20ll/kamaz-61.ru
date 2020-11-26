@@ -3,19 +3,10 @@
 @section('title', 'Главная страница')
 
 @section('content')
- 
-
 
 <!--слайдер-->
 @include('inc.slider')    
 <!--слайдер-->
-
-
-{{-- панель категорий< --}}  
-{{-- @include('inc.category_panel') --}}
-{{-- >панель категорий --}}
-
-
 
 <!-- контент -->
 <div class="container pt-4">
@@ -27,9 +18,7 @@
         @include('layouts.category_card', compact('category'))
         @endif
         @endforeach
-
-
-
+        
         <div class="col col-11 mb-5">
         <br>
         <hr>
