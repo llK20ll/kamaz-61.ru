@@ -32,13 +32,15 @@
         @foreach ($products as $product)
             <tr>
                 <td class="align-middle">
-                    <img class="serchresult__img" src="
-                    @if($product->image == null)
-                    {{ asset('/img/no-image-available.png') }}      
-                    @else
-                    {{ Storage::url($product->image) }}
-                    @endif
-                    " alt="{{$product->model ?? ''}}">
+                    <div class="serchresult__img">
+                        <img src="
+                        @if($product->image == null)
+                        {{ asset('/img/no-image-available.png') }}      
+                        @else
+                        {{ Storage::url($product->image) }}
+                        @endif
+                        " alt="{{$product->model ?? ''}}">
+                    </div>
                 </td>
                 <td class="align-middle">
 
