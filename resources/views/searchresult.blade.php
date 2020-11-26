@@ -43,15 +43,14 @@
                     </div>
                 </td>
                 <td class="align-middle">
-
-                    {{$product->category->title}}
+                    <a class=" text-center" href="{{ route('category', $product->category->code) }}">{{$product->category->title}}</a>
 
                 </td>
                 
                 
 
                 <td class="align-middle">
-                    {{$product->model}}
+                    <a href="{{route('product', [$product->category, $product])}}">{{$product->model}}</a>
                 </td>
                 
                 <td class="align-middle">
