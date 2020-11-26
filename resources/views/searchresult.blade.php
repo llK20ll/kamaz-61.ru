@@ -11,8 +11,11 @@
         <tbody>
 
             <tr>
-                <th class="text-left align-middle tableCaption">
+                <th class="text-center align-middle tableCaption">
                     Фото
+                </th>
+                <th class="text-center align-middle tableCaption">
+                    Категория
                 </th>
                 <th class="text-center align-middle tableCaption">
                     Модель
@@ -37,6 +40,13 @@
                     @endif
                     " alt="{{$product->model ?? ''}}">
                 </td>
+                <td class="align-middle">
+
+                    {{$product->category->title}}
+
+                </td>
+                
+                
 
                 <td class="align-middle">
                     {{$product->model}}
