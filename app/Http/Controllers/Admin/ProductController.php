@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::Paginate(15);
+        $products = Product::orderBy('category_id')->orderBy('price')->Paginate(15);
         $categories = Category::get();
         return view('auth.products.index', compact('products', 'categories'));
     }
