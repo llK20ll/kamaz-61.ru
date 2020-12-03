@@ -87,6 +87,7 @@ color: red;
 }
 .nav-link{
     font-size: 16pt!important; 
+    padding: 5px !important;
 }
 .nav-active{
     opacity: .7;
@@ -96,7 +97,6 @@ color: red;
     position: relative;
     color: black;
     font-weight: 200;
-    padding: 0 15px;
     opacity: 1;    
 }
 
@@ -137,11 +137,13 @@ ul li nav-item:hover {
 }
 .header-phone{
     text-align: center; 
+    margin: auto;
+    padding-left: 10px;
+    display: block;
 }
 .header-search{
-    padding-top: 10px;
-    padding-right: 10px;
-    display: block;
+    padding: 10px 10px 0px 0px;
+    
 }
 
 .header-phone a{
