@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{asset('css/phone.css')}}" media="screen" type="text/css" />
         <link rel="stylesheet" href="{{asset('css/whatsapp.css')}}" media="screen" type="text/css">
         
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
        
     
     <title>
