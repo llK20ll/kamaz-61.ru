@@ -79,8 +79,16 @@
                     <!-- Кнопка, открывающее модальное окно -->
                     <div data-toggle="modal" data-target="#myModal">
                         <img src="
-                        {{ Storage::url($item->image) }}
-                        " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
+                        @if($product->image == null)
+                        {{ asset('/img/no-image-available.png') }}      
+                        @else
+                        {{ Storage::url($product->image) }}
+                        @endif
+                        " alt="{{$product->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
+
+
+                      
+
                     </div>
                     
                     <!-- Модальное окно -->
