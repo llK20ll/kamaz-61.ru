@@ -142,8 +142,13 @@ ul li nav-item:hover {
     display: block;
 }
 .header-search{
-    padding: 10px 10px 0px 0px;
-    
+    min-width: 100%;    
+}
+.search__form{ 
+    display: inline-flex;
+    padding-top: 17px;
+    padding-right: 15px;
+    float:right;
 }
 
 .header-phone a{
@@ -213,7 +218,6 @@ ul li nav-item:hover {
 .card-body{
     padding: 15px !important;
 }
-
 .cards-image{
     margin: 0px 0px 10px 0px;
     padding: 0px 0px 58% 0px;

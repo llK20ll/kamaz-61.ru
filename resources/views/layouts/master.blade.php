@@ -35,7 +35,7 @@
             @include('inc/callback')
             
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="col p-0 m-0 text-center">
+                {{-- <div class="col p-0 m-0 text-center"> --}}
                     <a href="{{route('index')}}" class="navbar-brand">
                         <div class="logo-static-vts">
                             <img src="{{ asset('img/vts.png') }}" width="88px" alt="kamaz-61.ru"> 
@@ -53,7 +53,7 @@
                             <img src="{{ asset('img/autocenter-kamaz.png') }}" width="126px" alt="kamaz-61.ru"> 
                         </div>       
                     </a>
-                </div>
+                {{-- </div> --}}
 
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -183,13 +183,15 @@
                         <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                         </svg></span><span class="text-truncate"> Kamaz-RND@yandex.ru</span>
                     </a>
-                    <div class="header-search">
-                        @include('inc.search')
-                    </div>
+
                 </div>
-                
-                
             </nav>
+
+            {{-- поиск по модели --}}
+            @if(Route::is('index') || Route::is('category'))            
+                @include('inc.search')
+            @endif
+            {{-- поиск по модели --}}
 
                 @if(session()->has('success'))
                 <p class="alert alert-success mt-4 text-center">{{ session()->get('success')}} </p>
