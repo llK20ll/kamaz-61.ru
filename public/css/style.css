@@ -144,8 +144,8 @@ ul li nav-item:hover {
 .header-search{
     min-width: 100%;    
 }
-.search__form{ 
-    display: inline-flex;
+.search__form{
+    display: block;
     padding-top: 17px;
     padding-right: 15px;
     float:right;
