@@ -79,16 +79,13 @@
                     <!-- Кнопка, открывающее модальное окно -->
                     <div data-toggle="modal" data-target="#myModal">
                         <img src="
-                        @if($product->image == null)
+                        @if($item->image == null)
                         {{ asset('/img/no-image-available.png') }}      
                         @else
-                        {{ Storage::url($product->image) }}
+                        {{ Storage::url($item->image) }}
                         @endif
-                        " alt="{{$product->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
-
-
-                      
-
+                        " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
+                        
                     </div>
                     
                     <!-- Модальное окно -->
@@ -104,8 +101,12 @@
                             </div>
                             <div class="modal-body">
                                 <img class="product__img" src="
+                                @if($item->image == null)
+                                {{ asset('/img/no-image-available.png') }}      
+                                @else
                                 {{ Storage::url($item->image) }}
-                                " alt="{{ $item->model }}">
+                                @endif
+                                " alt="{{$item->model ?? ''}}">
                             </div>
                             {{-- <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
