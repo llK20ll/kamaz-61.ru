@@ -142,7 +142,7 @@ ul li nav-item:hover {
     display: block;
 }
 .header-search{
-    min-width: 100%;    
+    min-width: 100%;   
 }
 .search__form{
     margin-left: auto;
@@ -164,6 +164,8 @@ ul li nav-item:hover {
     opacity:.95;
     font-family: 'Russo One', sans-serif;
     font-size: 22px;    
+    margin-left: auto;
+    margin-right: 17px;
 }
 .callbackPhone{
     color: #222222 !important;

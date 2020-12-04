@@ -188,8 +188,10 @@
             </nav>
 
             {{-- поиск по модели --}}
-            @if(Route::is('index') || Route::is('category'))            
+            @if(Route::is('index') || Route::is('category'))  
+                
                 @include('inc.search')
+            
             @endif
             {{-- поиск по модели --}}
 
