@@ -1,4 +1,4 @@
-<div class="header-search bg-secondary mt-3 pt-3">
+<div class="header-search  mt-3 pt-3">
     <form type="get" class="form-inline" action="{{ route('search') }}">
         <div class="form-group mx-sm-3">
             <input type="text" class="form-control" name="s" id="s" placeholder="Поиск по модели...">
