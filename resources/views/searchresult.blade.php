@@ -4,7 +4,13 @@
 
 @section('content')
 
+  
+
     <h1 class="py-1">Результаты поиска</h1>
+
+  
+    @include('inc.search')
+ 
 
     <table  class="table text-center bg-light">
 
