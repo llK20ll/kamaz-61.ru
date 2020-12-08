@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -76,7 +77,12 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        $news->update($request->all());
+        Storage::delete($news->image);
+        $path = $request->file('image')->store('news');
+        $params = $request->all();
+        $params['image'] = $path;
+
+        $news->update($params);
         return redirect()->route('news.index');
 ;    }
 
