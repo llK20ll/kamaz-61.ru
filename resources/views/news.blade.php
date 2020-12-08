@@ -17,7 +17,7 @@
       <div class="col-lg-6 px-4">
           {{-- <img class="" src="{{ asset('/img/no-image-available.png') }} " alt="" style="max-width: 100%; float: left; margin-right: 15px;"> --}}
 
-          <img class="img-responsive mb-2" style="max-width: 100%; float: left; margin-right: 15px;" src="     
+          <img class="img-responsive mb-2" style="max-width: 100%; float: left; margin-right: 15px; margin-bottom: 15px;" src="     
           @if($item->image == null)
           {{ asset('/img/no-image-available.png') }}      
           @else
