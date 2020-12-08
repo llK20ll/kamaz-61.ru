@@ -15,15 +15,15 @@
     <h3 class="pl-3 pt-2"><p>{{$item->title}}</p></h3>
 
       <div class="col-lg-6 px-4">
-          <img class="" src="{{ asset('/img/no-image-available.png') }} " alt="" style="max-width: 100%; float: left; margin-right: 15px;">
+          {{-- <img class="" src="{{ asset('/img/no-image-available.png') }} " alt="" style="max-width: 100%; float: left; margin-right: 15px;"> --}}
 
-          <img class="img-responsive mb-2" src="     
+          <img class="img-responsive mb-2" style="max-width: 100%; float: left; margin-right: 15px;" src="     
           @if($item->image == null)
           {{ asset('/img/no-image-available.png') }}      
           @else
           {{ Storage::url($item->image) }}
           @endif
-          "> 
+          " alt="{{$item->title}}" > 
         </a>
       </div>
 
