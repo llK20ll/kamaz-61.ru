@@ -8,9 +8,9 @@
     <table class="table bg-light">
         <tbody>
         <tr>
-            <th class="text-center align-middle tableCaption">
+            {{-- <th class="text-center align-middle tableCaption">
                 id
-            </th>
+            </th> --}}
             <th class="text-center align-middle tableCaption">
                 Картинка
             </th>
@@ -31,7 +31,7 @@
 
         @foreach ($news as $item)
         <tr>
-            <td class="text-center">{{$item->id}}</td>
+            {{-- <td class="text-center">{{$item->id}}</td> --}}
 
             <td> 
                 <img style="width: 89px; vertical-align: middle;" src="

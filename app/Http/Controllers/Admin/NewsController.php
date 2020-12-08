@@ -38,8 +38,10 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {  
-        $path = $request->file('image');
-        News::create($request->all());      
+        $path = $request->file('image')->store('news');
+        $params = $request->all();
+        $params['image'] = $path;
+        News::create($params);      
         return redirect()->route('news.index');
     }
 

@@ -71,7 +71,7 @@
                         <br>
 
             <div class="input-group row">
-                <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                <label for="image" class="col-sm-2 col-form-label">Новая картинка: </label>
                 <div class="col-sm-10">
                     <label class="btn cardbtn btn-file">
                         Загрузить
