@@ -3,38 +3,33 @@
 @section('title', 'Новости')
 
 @section('content')
-<div class="vk__news">
+<h1 class="text-center pt-3">Новости</h1>
+<div class="container pt-1">
+  @foreach ($news as $item)
+  {{-- Новость --}}
+  <div class="row py-3">    
+    <div class="col p-0">
 
-    <h1 class="mb-2 text-center">Новости</h1>
+      <hr class="mt-1 mb-0">
 
-    
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+    <h3 class="pl-3 pt-2"><p>{{$item->title}}</p></h3>
 
-    <!-- VK Widget -->
-    <div id="vk_groups"></div>
-    <script type="text/javascript">
-    VK.Widgets.Group("vk_groups", {mode: 4, wide: 2, height: "400"}, 108052005);
-    </script>
+      <div class="col-lg-6 px-4">
+          <img class="img-responsive mb-2" src="{{ asset('/img/no-image-available.png') }} " alt="" style="max-width: 100%; float: left; margin-right: 15px;">
+      </div>
 
-
-   
-    <div id="vk_post_-108052005_33"></div>
-    {{-- <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script> --}}
-    <script type="text/javascript">
-    (function() {
-        VK.Widgets.Post("vk_post_-108052005_33", -108052005, 33, 'coE6wHdvEMkP9rSH67TK5BbLKlI', {width: 550});
-    }());
-    </script>
-    
-
-    <div id="vk_post_-108052005_32"></div>
-    {{-- <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script> --}}
-    <script type="text/javascript">
-      (function() {
-        VK.Widgets.Post("vk_post_-108052005_32", -108052005, 32, 'XTXbmqZEPPTNoHanMLEuvse7pL4', {width: 550});
-      }());
-    </script>
-
-
+      <div class="px-4">       
+        <p>{{$item->text}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="px-4 w-100">    
+      <hr class="mt-1 mb-0">
+      <p class="text-right">{{$item->created_at}}</p>
+    </div>
+  </div>
+  {{-- Новость --}}
+  @endforeach
 </div>
 @endsection

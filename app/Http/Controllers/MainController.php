@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Welcome;
 use App\Models\Category;
+use App\Models\News;
 use App\Models\Order;
 use App\Models\Part;
 use App\Models\Product;
@@ -37,8 +38,6 @@ class MainController extends Controller
         return view('product', compact('item', 'cat'));
     }
 
-
-
     public function leasing(){
         return view('leasing');
     }
@@ -66,7 +65,8 @@ class MainController extends Controller
         return view('privacy');
     }
     public function news(){
-        return view('news');
+        $news = News::orderBy('created_at', 'desc')->get();
+        return view('news', compact('news'));
     }
     
 }

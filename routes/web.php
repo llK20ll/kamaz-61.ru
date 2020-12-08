@@ -31,7 +31,8 @@ Route::middleware(['auth'])->group(function(){
                 Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');            
             });  
             Route::resource('products', 'ProductController');
-            Route::resource('categories', 'CategoryController');        
+            Route::resource('categories', 'CategoryController');   
+            Route::resource('news', 'NewsController');      
     });
 });
 
