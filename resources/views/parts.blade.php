@@ -93,7 +93,7 @@
                     <a class="dropdown-item" href="parts/Brake_system2"> • Тормозная система</a>
                     <a class="dropdown-item" href="parts/Electrical_equipment2"> • Электрооборудование</a>
                     <a class="dropdown-item" href="parts/Devices"> • Приборы</a>
-                    <a class="dropdown-item" href="parts/Inventions"> • Инсирументы</a>
+                    <a class="dropdown-item" href="parts/Inventions"> • Инструменты</a>
                     <a class="dropdown-item" href="parts/Power_take_off"> • Коробка отбора мощности</a>
                     <a class="dropdown-item" href="parts/Winch"> • Лебедка</a>
                     <a class="dropdown-item" href="parts/Cab"> • Кабина</a>
