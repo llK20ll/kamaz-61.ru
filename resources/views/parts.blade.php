@@ -84,7 +84,7 @@
                     <a class="dropdown-item" href="parts/Front_axle2"> • Передний мост</a>
                     <a class="dropdown-item" href="parts/Rear_axle"> • Задний мост</a>
                     <a class="dropdown-item" href="parts/Middle_bridge"> • Средний мост</a>
-                    <a class="dropdown-item" href="parts/Fifth_wheel_coupling"> • Устпройство седельно-сцепное</a>
+                    <a class="dropdown-item" href="parts/Fifth_wheel_coupling"> • Устройство седельно-сцепное</a>
                     <a class="dropdown-item" href="parts/Frame"> • Рама</a>
                     <a class="dropdown-item" href="parts/Balance_suspension"> • Балансирная подвеска</a>
                     <a class="dropdown-item" href="parts/Front_axle22"> • Передний мост</a>
@@ -93,7 +93,7 @@
                     <a class="dropdown-item" href="parts/Brake_system2"> • Тормозная система</a>
                     <a class="dropdown-item" href="parts/Electrical_equipment2"> • Электрооборудование</a>
                     <a class="dropdown-item" href="parts/Devices"> • Приборы</a>
-                    <a class="dropdown-item" href="parts/Inventions"> • Инсипументы</a>
+                    <a class="dropdown-item" href="parts/Inventions"> • Инсирументы</a>
                     <a class="dropdown-item" href="parts/Power_take_off"> • Коробка отбора мощности</a>
                     <a class="dropdown-item" href="parts/Winch"> • Лебедка</a>
                     <a class="dropdown-item" href="parts/Cab"> • Кабина</a>
