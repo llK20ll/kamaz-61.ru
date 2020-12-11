@@ -42,16 +42,16 @@
             <!-- Card body -->
             <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx194">
                 <div class="card-body pt-4">
-                    <a class="dropdown-item" href="parts/Engine_parts1"> • Детали двигателя</a>
-                    <a class="dropdown-item" href="parts/Engine_power_system"> • Система питания двигателя</a>
-                    <a class="dropdown-item" href="parts/Engine_cooling_system"> • Система охлажления двигателя</a>                
-                    <a class="dropdown-item" href="parts/Gearbox_aiming"> • Сцеление коробки передач</a>
-                    <a class="dropdown-item" href="parts/Transmission1"> • Коробка передач</a>
-                    <a class="dropdown-item" href="parts/Splitter_gearbox1"> • Коробка передач с делителем</a>
-                    <a class="dropdown-item" href="parts/Steering1"> • Рулевое управление</a>
-                    <a class="dropdown-item" href="parts/Brake_system1"> • Тормозная система</a>
-                    <a class="dropdown-item" href="parts/Electrical_equipment1"> • Электрооборудование</a>
-                    <a class="dropdown-item" href="parts/Appliances"> • Приборы</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Engine_parts1"> • Детали двигателя</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Engine_power_system"> • Система питания двигателя</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Engine_cooling_system"> • Система охлажления двигателя</a>                
+                    <a class="dropdown-item" target="_blank" href="parts/Gearbox_aiming"> • Сцеление коробки передач</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Transmission1"> • Коробка передач</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Splitter_gearbox1"> • Коробка передач с делителем</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Steering1"> • Рулевое управление</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Brake_system1"> • Тормозная система</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Electrical_equipment1"> • Электрооборудование</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Appliances"> • Приборы</a>
                 </div>
             </div>
         </div>
@@ -73,41 +73,41 @@
             <!-- Card body -->
             <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx194">
                 <div class="card-body pt-4">
-                    <a class="dropdown-item" href="parts/Engine_parts2"> • Детали двигателя</a>
-                    <a class="dropdown-item" href="parts/Supply_system"> • Система питания</a>
-                    <a class="dropdown-item" href="parts/Gas_release_system"> • Система выпуска газа</a>
-                    <a class="dropdown-item" href="parts/Cooling_system"> • Система охлажления</a>
-                    <a class="dropdown-item" href="parts/Healing"> • Сцеление</a>
-                    <a class="dropdown-item" href="parts/Transmission2"> • Коробка передач</a>
-                    <a class="dropdown-item" href="parts/Transfer_case"> • Раздаточная коробка</a>
-                    <a class="dropdown-item" href="parts/Cardan_shaft"> • Карданный вал</a>
-                    <a class="dropdown-item" href="parts/Front_axle2"> • Передний мост</a>
-                    <a class="dropdown-item" href="parts/Rear_axle"> • Задний мост</a>
-                    <a class="dropdown-item" href="parts/Middle_bridge"> • Средний мост</a>
-                    <a class="dropdown-item" href="parts/Fifth_wheel_coupling"> • Устройство седельно-сцепное</a>
-                    <a class="dropdown-item" href="parts/Frame"> • Рама</a>
-                    <a class="dropdown-item" href="parts/Balance_suspension"> • Балансирная подвеска</a>
-                    <a class="dropdown-item" href="parts/Front_axle22"> • Передний мост</a>
-                    <a class="dropdown-item" href="parts/Wheel"> • Колесо</a>
-                    <a class="dropdown-item" href="parts/Steering2"> • Рулевое управление</a>
-                    <a class="dropdown-item" href="parts/Brake_system2"> • Тормозная система</a>
-                    <a class="dropdown-item" href="parts/Electrical_equipment2"> • Электрооборудование</a>
-                    <a class="dropdown-item" href="parts/Devices"> • Приборы</a>
-                    <a class="dropdown-item" href="parts/Inventions"> • Инструменты</a>
-                    <a class="dropdown-item" href="parts/Power_take_off"> • Коробка отбора мощности</a>
-                    <a class="dropdown-item" href="parts/Winch"> • Лебедка</a>
-                    <a class="dropdown-item" href="parts/Cab"> • Кабина</a>
-                    <a class="dropdown-item" href="parts/Cab_base"> • Основание кабины</a>
-                    <a class="dropdown-item" href="parts/Front_of_the_cab"> • Передок кабины</a>
-                    <a class="dropdown-item" href="parts/Cab_sidewall"> • Боковина кабины</a>
-                    <a class="dropdown-item" href="parts/Rear_cab"> • Задок кабины</a>
-                    <a class="dropdown-item" href="parts/Cab_roof"> • Крыша кабины</a>
-                    <a class="dropdown-item" href="parts/Cab_doors"> • Двери кабины</a>
-                    <a class="dropdown-item" href="parts/Seats"> • Сидения</a>
-                    <a class="dropdown-item" href="parts/Ventilation_heating"> • Вентиляция, отопление</a>
-                    <a class="dropdown-item" href="parts/Cabin_accessories"> • Принадлежности кабины</a>
-                    <a class="dropdown-item" href="parts/Plumage_of_the_cabin"> • Оперение кабины</a>
-                    <a class="dropdown-item" href="parts/Platform"> • Платформа</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Engine_parts2"> • Детали двигателя</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Supply_system"> • Система питания</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Gas_release_system"> • Система выпуска газа</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cooling_system"> • Система охлажления</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Healing"> • Сцеление</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Transmission2"> • Коробка передач</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Transfer_case"> • Раздаточная коробка</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cardan_shaft"> • Карданный вал</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Front_axle2"> • Передний мост</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Rear_axle"> • Задний мост</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Middle_bridge"> • Средний мост</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Fifth_wheel_coupling"> • Устройство седельно-сцепное</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Frame"> • Рама</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Balance_suspension"> • Балансирная подвеска</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Front_axle22"> • Передний мост</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Wheel"> • Колесо</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Steering2"> • Рулевое управление</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Brake_system2"> • Тормозная система</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Electrical_equipment2"> • Электрооборудование</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Devices"> • Приборы</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Inventions"> • Инструменты</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Power_take_off"> • Коробка отбора мощности</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Winch"> • Лебедка</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cab"> • Кабина</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cab_base"> • Основание кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Front_of_the_cab"> • Передок кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cab_sidewall"> • Боковина кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Rear_cab"> • Задок кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cab_roof"> • Крыша кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cab_doors"> • Двери кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Seats"> • Сидения</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Ventilation_heating"> • Вентиляция, отопление</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Cabin_accessories"> • Принадлежности кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Plumage_of_the_cabin"> • Оперение кабины</a>
+                    <a class="dropdown-item" target="_blank" href="parts/Platform"> • Платформа</a>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse6"
                 aria-expanded="false" aria-controls="collapse6">
                 <h3 class="mb-0">
-                    <a href="parts/Normals">Нормали</a>
+                    <a target="_blank" href="parts/Normals">Нормали</a>
 
                 </h3>
             </a>
