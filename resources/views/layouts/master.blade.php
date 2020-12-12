@@ -230,7 +230,7 @@
                         </div>                
                     </div>            
                 </div>
-                    <div class="text-center">
+                    <div class="text-center pb-2">
                             <!-- Yandex.Metrika informer -->
                             <a href="https://metrika.yandex.ru/stat/?id=33824834&amp;from=informer"
                             target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/33824834/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
