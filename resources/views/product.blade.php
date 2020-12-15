@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('meta_description', 'На kamaz-61.ru можно купить ' .  $item->model . ' по самой выгодной цене в Южном Федеральном Округе. Консультации по выбору +7-906-181-50-14')    
+
 @section('title', ' | Продажа - ' . $cat->title . ' КАМАЗ - ' . $item->model . ' - цены, фото, технические характеристики у официального дилера КАМАЗ')
 
 @section('content')

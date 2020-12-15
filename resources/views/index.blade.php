@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('meta_description', 'На kamaz-61.ru можно купить автомобили камаз по самой выгодной цене в Южном Федеральном Округе. Консультации по выбору +7-906-181-50-14')
+    
 @section('title', 'Главная страница')
 
 @section('content')
