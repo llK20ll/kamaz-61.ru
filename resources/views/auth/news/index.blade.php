@@ -44,7 +44,7 @@
             </td>
 
             <td class="text-left" style="max-width: 200px">{{$item->title}}</td>
-            <td class="text-left" style="max-width: 400px"> <p class="news__text">{{$item->text}}</p></td>
+            <td class="text-left" style="max-width: 400px"><p class="news__text">{{$item->text}}</p></td>
             <td class="text-right" style="max-width: 100px">{{$item->created_at}}</td>
 
             <td class="text-center" style="width: 100px">
