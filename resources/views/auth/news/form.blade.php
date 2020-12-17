@@ -39,36 +39,38 @@
                     <input type="text" class="form-control" name="title" id="title" value="@isset($news){{$news->title}} @endisset">
                 </div>
             </div>
+
             <br>
+
             <div class="input-group row">
                 <label for="text" class="col-sm-2 col-form-label">Текст новости:</label>
                 <div class="col-sm-6">
                     <textarea type="text" class="form-control" name="text" id="text" cols="30" rows="10">@isset($news){{$news->text}} @endisset</textarea>
                 </div>
             </div>
-            
-                        <br>
 
+            <br>
 
-                        <div class="input-group row">
-                            <label for="new_price" class="col-sm-2 col-form-label">Картинка: </label>
-                            <div class="col-sm-6">        
-                                
-                                <img src="
-                                @isset($news)
-                                    @if($news->image == null)
-                                        {{ asset('/img/no-image-available.png') }}      
-                                    @else
-                                        {{ Storage::url($news->image) }}
-                                    @endif
-                                        
-                                @else
-                                {{ asset('/img/no-image-available.png') }} 
-                                @endisset
-                                " alt=" {{$news->title ?? ''}} ">                   
-                            </div>
-                        </div>
-                        <br>
+            <div class="input-group row">
+                <label for="new_price" class="col-sm-2 col-form-label">Картинка: </label>
+                <div class="col-sm-6">        
+                    
+                    <img src="
+                    @isset($news)
+                        @if($news->image == null)
+                            {{ asset('/img/no-image-available.png') }}      
+                        @else
+                            {{ Storage::url($news->image) }}
+                        @endif
+                            
+                    @else
+                    {{ asset('/img/no-image-available.png') }} 
+                    @endisset
+                    " alt=" {{$news->title ?? ''}} ">                   
+                </div>
+            </div>
+
+            <br>
 
             <div class="input-group row">
                 <label for="image" class="col-sm-2 col-form-label">Новая картинка: </label>
@@ -79,6 +81,7 @@
                     </label>
                 </div>
             </div>
+            
             <br>
 
             <button class="btn cardbtn">Сохранить</button>

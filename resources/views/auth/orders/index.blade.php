@@ -23,7 +23,7 @@
                 <th class="align-middle">
                     Сумма
                 </th>
-                <th class="align-middle">
+                <th class="align-middle text-center">
                     Действия
                 </th>
             </tr>
@@ -35,17 +35,26 @@
                 <td class="align-middle">{{ $order->phone }}</td>
                 <td class="align-middle">{{ $order->created_at->format('H:i d/m/Y') }}</td>
                 <td class="align-middle">{{ number_format($order->getFullPrice())}} руб.</td>
-                <td class="align-middle">
-                    <div class="btn-group" role="group">
-                        <a class="btn btn-primary" type="button"
-                        @admin
-                        href="{{ route('orders.show', $order)}}"                                   
-                        @else
-                        href="{{ route('person.orders.show', $order)}}"    
-                        @endadmin
-                        >Открыть</a>   
-                    </div>
+               
+                <td class="align-middle text-center">
+                    <form action="{{ route('orderDelete', ['order' => $order->id]) }}" method="POST">
+                        @csrf
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-primary" type="button"
+                            @admin
+                            href="{{ route('orders.show', $order)}}"                                   
+                            @else
+                            href="{{ route('person.orders.show', $order)}}"    
+                            @endadmin
+                            >Открыть</a>   
+                        </div>  
+                            @admin                      
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger ml-1">Удалить</button>  
+                            @endadmin                      
+                    </form>
                 </td>
+            
             </tr>
             
             @endforeach

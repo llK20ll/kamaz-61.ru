@@ -28,7 +28,8 @@ Route::middleware(['auth'])->group(function(){
         ], function () {
             Route::group(['middleware' => 'is_admin'], function () {
                 Route::get('/orders', 'OrderController@index')->name('home');            
-                Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');            
+                Route::get('/orders/{order}', 'OrderController@show')->name('orders.show'); 
+                Route::delete('/orders/delete/{order}', 'OrderController@destroy')->name('orderDelete');           
             });  
             Route::resource('products', 'ProductController');
             Route::resource('categories', 'CategoryController');   
