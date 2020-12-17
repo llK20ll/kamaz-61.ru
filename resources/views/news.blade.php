@@ -28,7 +28,7 @@
       </div>
 
       <div class="col px-4">       
-        <pre class="news__text">{{$item->text}}</pre>
+        <p class="news__text">{{$item->text}}</p>
       </div>
     </div>
   </div>
