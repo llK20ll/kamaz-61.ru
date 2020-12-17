@@ -77,14 +77,17 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        Storage::delete($news->image);
-        $path = $request->file('image')->store('news');
         $params = $request->all();
-        $params['image'] = $path;
-
+        unset($params['image']);
+        if($request->has('image')){
+            Storage::delete($news->image);
+            $path = $request->file('image')->store('news');
+            $params['image'] = $path;
+        }
+        
         $news->update($params);
         return redirect()->route('news.index');
-;    }
+    }
 
     /**
      * Remove the specified resource from storage.
