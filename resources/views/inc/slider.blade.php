@@ -5,44 +5,27 @@
     <script src="js/carousel.js"></script>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="z-index: 0;" data-interval="10000">
             <ol class="carousel-indicators">
-                <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="8"></li> 
+
+                @for ($i = 0; $i < $banners->count() ; $i++)
+                <li class="               
+                @if ($i == 0)
+                active 
+                @endif
+                carousel__item__indicator" data-target="#carouselExampleIndicators" data-slide-to="{{$i}}"></li>
+                @endfor
+
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/carousel/1.jpg" alt="" class="d-block w-100">
+                @for ($i = 0; $i < $banners->count() ; $i++)
+                <div class="carousel-item      
+                @if ($i == 0)
+                active 
+                @endif
+                ">
+                <a href="{{$banners[$i]->link}}"><img src="{{ Storage::url($banners[$i]->image)}}" alt="{{$banners[$i]->link}}" class="d-block w-100"></a>                  
                 </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/2.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/3.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/4.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/5.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/6.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/7.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/8.jpg" alt="" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/carousel/9.jpg" alt="" class="d-block w-100">
-                </div>
+                @endfor                
+
             </div>
     
             <a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">

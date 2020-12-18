@@ -35,7 +35,7 @@
             {{ Storage::url($category->image) }}
             @endif
             " height="50px" alt="{{$category->model ?? ''}}">
-        </td>
+            </td>
             <td class="align-middle">{{ $category->title ?? ''}}</td>
             <td class="align-middle">{{ $category->code ?? '' }}</td>
             <td class="align-middle text-center">{{ $categories[$category->parent - 1 ]->title ?? '' }}</td>

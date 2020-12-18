@@ -569,3 +569,9 @@ margin: 0 10px 0 10px ;
 .news__text{
     white-space: pre-wrap;
 }
+
+.carousel__item__indicator{
+    height: 20px !important;
+    width: 20px !important;
+    margin-right: 15px !important;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Welcome;
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Order;
@@ -15,8 +16,8 @@ class MainController extends Controller
 {
     public function index(){       
         $categories = Category::get();
-
-        return view('index', compact('categories'));
+        $banners = Banner::get();
+        return view('index', compact('categories', 'banners'));
     }
     
     public function categories(){
@@ -24,8 +25,7 @@ class MainController extends Controller
         return view('categories', compact('categories'));
     }    
 
-    public function category($code){
-        
+    public function category($code){        
         $categories = Category::get();
         $category = Category::where('code', $code)->first();
         $products = Product::where('category_id', '=', $category->id)->orderBy('price')->paginate(9); 
@@ -68,5 +68,4 @@ class MainController extends Controller
         $news = News::orderBy('created_at', 'desc')->get();
         return view('news', compact('news'));
     }
-    
 }

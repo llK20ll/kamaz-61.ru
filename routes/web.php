@@ -33,7 +33,8 @@ Route::middleware(['auth'])->group(function(){
             });  
             Route::resource('products', 'ProductController');
             Route::resource('categories', 'CategoryController');   
-            Route::resource('news', 'NewsController');      
+            Route::resource('news', 'NewsController');
+            Route::resource('banner', 'BannerController');     
     });
 });
 

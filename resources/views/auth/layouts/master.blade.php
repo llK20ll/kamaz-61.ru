@@ -55,6 +55,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('news.index')}}">Новости</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('banner.index')}}">Баннеры</a>
+                    </li>
                     @endadmin
 
                 </ul>
