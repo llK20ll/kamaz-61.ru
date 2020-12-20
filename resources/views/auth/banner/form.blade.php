@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="col-md-12">
+<div class="container">
     
     <h1>Создать баннер</h1>
 
@@ -24,11 +24,11 @@
             <br>
 
             <div class="input-group row">
-                <label for="image" class="col-sm-2 col-form-label">Новая картинка(950x413): </label>
-                <div class="col-sm-10">
-                    <label class="btn cardbtn btn-file">
-                        Загрузить
-                        <input type="file" style="display: none;" name="image" id="image">
+                <label for="image" class="col-sm-2 col-form-label">Загруть баннер .jpg (950x413): </label>
+                <div class="col-sm-10 align-self-center">
+                    <label class="btn">
+                        
+                        <input type="file"  name="image" id="image">
                     </label>
                 </div>
             </div>

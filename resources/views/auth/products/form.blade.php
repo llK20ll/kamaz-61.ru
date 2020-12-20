@@ -78,7 +78,9 @@
                 <label for="card_params" class="col-sm-2 col-form-label">Параметры карточки:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="card_params" id="card_params" cols="30" rows="10">@isset($product){{ $product->card_params }}@endisset</textarea>
+                    {{-- <textarea class="form-control" name="card_params" id="card_params" cols="30" rows="10">@isset($product){{ $product->card_params }}@endisset</textarea> --}}
+                    <textarea class="form-control" name="card_params" id="card_params" cols="30" rows="10">{{ old('card_params', isset($product) ? $product->card_params : null) }}</textarea>
+
                 </div>
             </div>
             <br>
@@ -87,7 +89,7 @@
                 <label for="vehicle_characteristics_params" class="col-sm-2 col-form-label">Характеристики автомобиля:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="vehicle_characteristics_params" id="vehicle_characteristics_params" cols="30" rows="10">@isset($product){{ $product->vehicle_characteristics_params }}@endisset</textarea>
+                    <textarea class="form-control" name="vehicle_characteristics_params" id="vehicle_characteristics_params" cols="30" rows="10">{{ old('vehicle_characteristics_params', isset($product) ? $product->vehicle_characteristics_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -96,7 +98,7 @@
                 <label for="weight_parameters_loads_params" class="col-sm-2 col-form-label">Весовые параметры, нагрузки:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="weight_parameters_loads_params" id="weight_parameters_loads_params" cols="30" rows="10">@isset($product){{ $product->weight_parameters_loads_params }}@endisset</textarea>
+                    <textarea class="form-control" name="weight_parameters_loads_params" id="weight_parameters_loads_params" cols="30" rows="10">{{ old('weight_parameters_loads_params', isset($product) ? $product->weight_parameters_loads_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -105,7 +107,7 @@
                 <label for="engine_params" class="col-sm-2 col-form-label">Двигатель:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="engine_params" id="engine_params" cols="30" rows="10">@isset($product){{ $product->engine_params }}@endisset</textarea>
+                    <textarea class="form-control" name="engine_params" id="engine_params" cols="30" rows="10">{{ old('engine_params', isset($product) ? $product->engine_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -114,7 +116,7 @@
                 <label for="gearbox_params" class="col-sm-2 col-form-label">Коробка передач:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="gearbox_params" id="gearbox_params" cols="30" rows="10">@isset($product){{ $product->gearbox_params }}@endisset</textarea>
+                    <textarea class="form-control" name="gearbox_params" id="gearbox_params" cols="30" rows="10">{{ old('gearbox_params', isset($product) ? $product->gearbox_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -123,7 +125,7 @@
                 <label for="cabin_params" class="col-sm-2 col-form-label">Кабина:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="cabin_params" id="cabin_params" cols="30" rows="10">@isset($product){{ $product->cabin_params }}@endisset</textarea>
+                    <textarea class="form-control" name="cabin_params" id="cabin_params" cols="30" rows="10">{{ old('cabin_params', isset($product) ? $product->cabin_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -132,7 +134,7 @@
                 <label for="chassis_characteristics_params" class="col-sm-2 col-form-label">Характеристики шасси:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="chassis_characteristics_params" id="chassis_characteristics_params" cols="30" rows="10">@isset($product){{ $product->chassis_characteristics_params }}@endisset</textarea>
+                    <textarea class="form-control" name="chassis_characteristics_params" id="chassis_characteristics_params" cols="30" rows="10">{{ old('chassis_characteristics_params', isset($product) ? $product->chassis_characteristics_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -141,7 +143,7 @@
                 <label for="additionally_params" class="col-sm-2 col-form-label">Дополнительно:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="additionally_params" id="additionally_params" cols="30" rows="10">@isset($product){{ $product->additionally_params }}@endisset</textarea>
+                    <textarea class="form-control" name="additionally_params" id="additionally_params" cols="30" rows="10">{{ old('additionally_params', isset($product) ? $product->additionally_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -150,7 +152,7 @@
                 <label for="semi_trailer_characteristics_params" class="col-sm-2 col-form-label">Характеристики полуприцепа:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="semi_trailer_characteristics_params" id="semi_trailer_characteristics_params" cols="30" rows="10">@isset($product){{ $product->semi_trailer_characteristics_params }}@endisset</textarea>
+                    <textarea class="form-control" name="semi_trailer_characteristics_params" id="semi_trailer_characteristics_params" cols="30" rows="10">{{ old('semi_trailer_characteristics_params', isset($product) ? $product->semi_trailer_characteristics_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -159,7 +161,7 @@
                 <label for="compatible_tractors_params" class="col-sm-2 col-form-label">Совместимые тягачи:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="compatible_tractors_params" id="compatible_tractors_params" cols="30" rows="10">@isset($product){{ $product->compatible_tractors_params }}@endisset</textarea>
+                    <textarea class="form-control" name="compatible_tractors_params" id="compatible_tractors_params" cols="30" rows="10">{{ old('compatible_tractors_params', isset($product) ? $product->compatible_tractors_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -168,7 +170,7 @@
                 <label for="trailer_characteristics_params" class="col-sm-2 col-form-label">Характеристики прицепа:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    <textarea class="form-control" name="trailer_characteristics_params" id="trailer_characteristics_params" cols="30" rows="10">@isset($product){{ $product->trailer_characteristics_params }}@endisset</textarea>
+                    <textarea class="form-control" name="trailer_characteristics_params" id="trailer_characteristics_params" cols="30" rows="10">{{ old('trailer_characteristics_params', isset($product) ? $product->trailer_characteristics_params : null) }}</textarea>
                 </div>
             </div>
             <br>
@@ -190,7 +192,7 @@
             <div class="input-group row">
                 <label for="new_price" class="col-sm-2 col-form-label">Новая цена: </label>
                 <div class="col-sm-6">                    
-                    <input type="text" class="form-control" name="new_price" id="new_price" value="@isset($product){{$product->new_price}} @endisset">
+                    <input type="text" class="form-control" name="new_price" id="new_price" value="{{ old('new_price', isset($product) ?  $product->new_price : null)}}">
                 </div>
             </div>
             <br>
@@ -216,13 +218,13 @@
             <br>
 
             <div class="input-group row">
-                {{-- <label for="image" class="col-sm-2 col-form-label">Картинка: </label> --}}
-                <div class="col-sm-10">
-                    <label class="btn cardbtn btn-file">
+                <label for="image" class="col-sm-2 col-form-label  align-self-center">Загрузить новую: .jpg</label>
+                <div class="col-sm-10  align-self-center">
+                    <label class="btn btn-file">
                         {{-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder2-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14V3.5zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5V6zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"/>
-                        </svg>--}} Загрузить новую
-                        <input type="file" style="display: none;" name="image" id="image">
+                        </svg>--}} 
+                        <input type="file" name="image" id="image">
                     </label>
                 </div>
             </div>
