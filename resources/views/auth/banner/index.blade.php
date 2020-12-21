@@ -16,7 +16,7 @@
                     Ссылка
                 </th> 
                 <th class="text-right align-middle tableCaption" style="min-width: 120px">
-                    Дата создания
+                    Последнее изменение
                 </th>
                 <th class="text-center align-middle tableCaption">
                     Действия
@@ -40,14 +40,21 @@
 
             <td class="text-center align-middle" style="width: 27%">{{ $banner->link ?? ''}}</td>
 
-            <td class="text-right align-middle" style="max-width: 100px">{{$banner->created_at}}</td>
+            <td class="text-right align-middle" style="max-width: 100px">
+                @isset($banner->updated_at)
+                {{$banner->updated_at}}
+                @else
+                {{$banner->created_at}}
+                @endisset
+            </td>
 
             <td class="text-center align-middle" style="width: 100px">
                 <div class="btn-group" role="group">
-                    <form action=" {{ route('banner.destroy', $banner) }}" method="POST">                     
+                    <form action=" {{ route('banner.destroy', $banner) }}" method="POST">
+                        <a href="{{ route('banner.edit', $banner) }}" class="btn btn-success w-100">Редактировать</a>                     
                         @csrf
                         @method('DELETE')                        
-                        <input class="btn btn-danger" style="width: 100px" type="submit" value="Удалить">
+                        <input class="btn btn-danger w-100" type="submit" value="Удалить">
                     </form>
                 </div>
             </td>

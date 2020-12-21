@@ -78,7 +78,6 @@
                 <label for="card_params" class="col-sm-2 col-form-label">Параметры карточки:</label>
                 <div class="col-sm-6">                    
                     {{-- <input type="text" class="form-control" name="card_params" id="card_params" value="@isset($product){{$product->card_params}} @endisset"> --}}
-                    {{-- <textarea class="form-control" name="card_params" id="card_params" cols="30" rows="10">@isset($product){{ $product->card_params }}@endisset</textarea> --}}
                     <textarea class="form-control" name="card_params" id="card_params" cols="30" rows="10">{{ old('card_params', isset($product) ? $product->card_params : null) }}</textarea>
 
                 </div>
