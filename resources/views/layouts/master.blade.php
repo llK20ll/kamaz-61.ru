@@ -187,13 +187,17 @@
             </nav>
 
             {{-- поиск по модели --}}
-            @if(Route::is('index') || Route::is('category'))  
+            <div class="container">
+                <div class="d-flex justify-content-end">
+                @if(Route::is('index') || Route::is('category'))  
+                    
+                    @include('inc.search')
                 
-                @include('inc.search')
-            
-            @endif
+                @endif
+                </div>
+            </div>
             {{-- поиск по модели --}}
-
+            
                 @if(session()->has('success'))
                 <p class="alert alert-success mt-4 text-center">{{ session()->get('success')}} </p>
                 @endif

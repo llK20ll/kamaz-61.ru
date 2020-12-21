@@ -6,7 +6,7 @@
 
   
 
-    <h1 class="py-1">Результаты поиска</h1>
+    <h1 class="py-2">Результаты поиска</h1>
 
   
     @include('inc.search')
