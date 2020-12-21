@@ -29,9 +29,9 @@
                 @method('PUT')
             @endisset
             @csrf
-            @admin
+
             <div class="input-group row">
-                <label for="link" class="col-sm-2 col-form-label">Ссылка:</label>
+                <label for="link" class="col-sm-2 col-form-label">Ссылка*:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="link" id="link" value="{{ old('card_params', isset($banner) ? $banner->link : '#') }}">
                 </div>
@@ -40,7 +40,7 @@
             <br>
 
             <div class="input-group row">
-                <label for="image" class="col-sm-2 col-form-label">Загруть баннер .jpg (950x413): </label>
+                <label for="image" class="col-sm-2 col-form-label">Загруть баннер* .jpg (950x413): </label>
                 <div class="col-sm-10 align-self-center">
                     <label class="btn">
                         
@@ -52,7 +52,7 @@
             <br>
 
             <button class="btn cardbtn">Сохранить</button>
-            @endadmin
+
         </div>
     </form>
     
