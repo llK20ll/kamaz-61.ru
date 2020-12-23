@@ -16,7 +16,7 @@ class MainController extends Controller
 {
     public function index(){       
         $categories = Category::get();
-        $banners = Banner::get();
+        $banners = Banner::orderBy('created_at', 'desc')->get();
         return view('index', compact('categories', 'banners'));
     }
     
