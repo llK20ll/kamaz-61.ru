@@ -21,14 +21,14 @@
         >{{ number_format($item->price)}}</span> руб.
     </div>
 
-    <div class="col-12 col-sm-12 col-lg-4 align-self-center py-3">
-        <div>
-            @isset($item->new_price)
+    @isset($item->new_price)
+        <div class="col-12 col-sm-12 col-lg-4 align-self-center py-3">
+            <div>
             <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-            <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.      
-            @endisset
+            <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
+            </div>
         </div>
-    </div>
+    @endisset
 
     <div class="col-12 col-sm-12 col-lg-2 align-self-center py-3 px-4">
         <form action="{{route('basket-add', $item)}}" method="POST">
