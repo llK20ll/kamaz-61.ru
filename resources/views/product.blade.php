@@ -6,9 +6,13 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between wrapper product__head">
-    <div class="p-3 align-self-center ml-3"><span>Модель: {{ $item->model }}</span></div>
-    <div class="p-3 align-self-center">
+<div class="d-flex row justify-content-between wrapper text-center product__head">
+    
+    <div class="col-12 col-sm-12 col-lg-3 align-self-center  py-3">
+        <span>Модель: {{ $item->model }}</span>
+    </div>
+
+    <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center py-3">
         Цена:
         <span
         @isset($item->new_price)
@@ -16,161 +20,78 @@
         @endisset         
         >{{ number_format($item->price)}}</span> руб.
     </div>
-    <div class="p-3 align-self-center">
-        @isset($item->new_price)
-        <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-        <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.      
-        @endisset
+
+    <div class="col-12 col-sm-12 col-lg-4 align-self-center py-3">
+        <div>
+            @isset($item->new_price)
+            <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
+            <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.      
+            @endisset
+        </div>
     </div>
-    <div class="p-3 align-self-center mr-3">
+
+    <div class="col-12 col-sm-12 col-lg-2 align-self-center py-3 px-4">
         <form action="{{route('basket-add', $item)}}" method="POST">
             <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
             <span class="align-middle">
             Купить 
             <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+            <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
             </svg>  
-               
+            
             </span>       
             </button> 
         @csrf     
         </form>
-    </div>
-    {{-- <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div> --}}
-  </div>
-
-
-        {{-- <div class="product__head__panel">
-            <div class="row">
-                
-                <div>                    
-                    <span>Модель: {{ $item->model }}</span>
-                </div>
-
-                <div>                
-                    Цена:
-                    <span
-                    @isset($item->new_price)
-                    style="text-decoration: line-through;"
-                    
-                    @endisset 
-                    
-                    >{{ number_format($item->price)}}</span> руб.
-                </div>
-
-                <div class="">
-                    @isset($item->new_price)
-                    <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-                    <span class="badge badge-success align-middle" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
-                    
-                    @endisset
-                </div>
-            
-            
-                <div class="">
-                    <form action="{{route('basket-add', $item)}}" method="POST">
-
-
-                        <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
-                            <span class="align-middle">
-                            Купить 
-                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                            </svg>  
-                               
-                            </span>       
-                          </button> 
-
-
-                        @csrf     
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
-     --}}
- 
-                {{-- <div class="col-md-auto">Модель: {{ $item->model }}</div>
-                <div class="col-md-auto">Цена: {{ number_format($item->price) }} руб. с НДС</div>
-                <div class="col-md-auto">
-                    <form action="{{route('basket-add', $item)}}" method="POST">
-                        <button type="submit" class="btn btn-outline-primary cardbtn" role="button" title="Поместить в корзину">
-                             
-                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                            </svg>
-                        </button> 
-                        @csrf     
-                    </form>
-                </div> 
-   --}}
+    </div>    
+    
+</div>
 
 {{-- таблиц характеристик --}}
     <div class="card-body p-0 mt-1">
         <div class="row">
 
             <div class="col-sm-4 p-1">
-
-                    {{-- <img src="
+                <!-- Кнопка, открывающее модальное окно -->
+                <div data-toggle="modal" data-target="#myModal">
+                    <img src="
+                    @if($item->image == null)
+                    {{ asset('/img/no-image-available.png') }}      
+                    @else
                     {{ Storage::url($item->image) }}
-                    " alt="{{ $item->model }}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
+                    @endif
+                    " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">                        
+                </div>
                 
- --}}
-
-
-                    <!-- Кнопка, открывающее модальное окно -->
-                    <div data-toggle="modal" data-target="#myModal">
-                        <img src="
-                        @if($item->image == null)
-                        {{ asset('/img/no-image-available.png') }}      
-                        @else
-                        {{ Storage::url($item->image) }}
-                        @endif
-                        " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">    
+                <!-- Модальное окно -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                            <span aria-hidden="true">×</span>
+                        </button>
                         
+                        </div>
+                        <div class="modal-body">
+                            <img class="product__img" src="
+                            @if($item->image == null)
+                            {{ asset('/img/no-image-available.png') }}      
+                            @else
+                            {{ Storage::url($item->image) }}
+                            @endif
+                            " alt="{{$item->model ?? ''}}">
+                        </div>
                     </div>
-                    
-                    <!-- Модальное окно -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                            
-                            </div>
-                            <div class="modal-body">
-                                <img class="product__img" src="
-                                @if($item->image == null)
-                                {{ asset('/img/no-image-available.png') }}      
-                                @else
-                                {{ Storage::url($item->image) }}
-                                @endif
-                                " alt="{{$item->model ?? ''}}">
-                            </div>
-                            {{-- <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary">Сохранить изменения</button>
-                            </div> --}}
-                        </div>
-                        </div>
-                    </div>  
-
-
-
-
-
+                    </div>
+                </div>  
 
                 <div class="row m-0">
                     <div class="card m-3 w-100 card-info rg-text">
 
                         <div class="card-header truckInfoTabHead">Основные параметры</div>
                                            
-
                         <table  class="main-params-table">    
                             <?php 
                             $params = explode("!", $item->card_params);
