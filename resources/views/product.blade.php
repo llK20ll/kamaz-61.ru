@@ -6,14 +6,49 @@
 
 @section('content')
 
-        <div class="wrapper p-4">
+<div class="d-flex justify-content-between wrapper product__head">
+    <div class="p-3 align-self-center ml-3"><span>Модель: {{ $item->model }}</span></div>
+    <div class="p-3 align-self-center">
+        Цена:
+        <span
+        @isset($item->new_price)
+        style="text-decoration: line-through;"        
+        @endisset         
+        >{{ number_format($item->price)}}</span> руб.
+    </div>
+    <div class="p-3 align-self-center">
+        @isset($item->new_price)
+        <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
+        <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.      
+        @endisset
+    </div>
+    <div class="p-3 align-self-center mr-3">
+        <form action="{{route('basket-add', $item)}}" method="POST">
+            <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
+            <span class="align-middle">
+            Купить 
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+            </svg>  
+               
+            </span>       
+            </button> 
+        @csrf     
+        </form>
+    </div>
+    {{-- <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div> --}}
+  </div>
+
+
+        {{-- <div class="product__head__panel">
             <div class="row">
-                <div class="block__item">
-                    <div>Модель: {{ $item->model }}</div>
+                
+                <div>                    
+                    <span>Модель: {{ $item->model }}</span>
                 </div>
 
-                <div class= "block__item">
-                
+                <div>                
                     Цена:
                     <span
                     @isset($item->new_price)
@@ -24,23 +59,30 @@
                     >{{ number_format($item->price)}}</span> руб.
                 </div>
 
-                <div class="block__item">
+                <div class="">
                     @isset($item->new_price)
                     <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-                    <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
+                    <span class="badge badge-success align-middle" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
                     
                     @endisset
                 </div>
             
             
-                <div class="block__item">
+                <div class="">
                     <form action="{{route('basket-add', $item)}}" method="POST">
-                        <button type="submit" class="btn btn-primary mb-0 block__btn" role="button" title="Купить">
-                            Купить
+
+
+                        <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
+                            <span class="align-middle">
+                            Купить 
                             <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                            </svg>
-                        </button> 
+                              <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                            </svg>  
+                               
+                            </span>       
+                          </button> 
+
+
                         @csrf     
                     </form>
                 </div>
@@ -48,7 +90,7 @@
         </div>
 
 
-    
+     --}}
  
                 {{-- <div class="col-md-auto">Модель: {{ $item->model }}</div>
                 <div class="col-md-auto">Цена: {{ number_format($item->price) }} руб. с НДС</div>

@@ -398,7 +398,7 @@ div.filters {
     overflow: hidden;
     min-height: 100%;
     padding: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: #c8cddd;
     border: 1px solid #6c7c99;
 }
@@ -574,4 +574,10 @@ margin: 0 10px 0 10px ;
     height: 20px !important;
     width: 20px !important;
     margin-right: 15px !important;
+}
+
+.product__head{
+    font-size: 18px;
+    color: #111;
+    font-weight: 700;
 }
