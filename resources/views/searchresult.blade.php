@@ -39,13 +39,15 @@
             <tr>
                 <td class="align-middle">
                     <div class="serchresult__img">
-                        <img src="
-                        @if($product->image == null)
-                        {{ asset('/img/no-image-available.png') }}      
-                        @else
-                        {{ Storage::url($product->image) }}
-                        @endif
-                        " alt="{{$product->model ?? ''}}">
+                        <a href="{{route('product', [$product->category, $product])}}">
+                            <img src="
+                            @if($product->image == null)
+                            {{ asset('/img/no-image-available.png') }}      
+                            @else
+                            {{ Storage::url($product->image) }}
+                            @endif
+                            " alt="{{$product->model ?? ''}}">
+                        </a>
                     </div>
                 </td>
                 <td class="align-middle">
