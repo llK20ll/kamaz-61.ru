@@ -269,7 +269,7 @@
         <script src="https://daruse.ru/assets/js/snowfall.js"></script>
         <script type="text/javascript">
                   $(document).snowfall({
-            flakeCount: 100,
+            flakeCount: 50,
             image :"img/snow3.png", 
             minSize: 5, 
             maxSize:12,
