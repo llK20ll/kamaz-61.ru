@@ -186,7 +186,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -224,7 +224,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -261,7 +261,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -299,7 +299,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -337,7 +337,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -375,7 +375,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -412,7 +412,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -450,7 +450,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>
@@ -491,7 +491,7 @@
                                     <?php foreach ($array as $items): ?>
                                         <tr>
                                         <?php foreach ($items as $row): ?>
-                                            <td class="w-50"><?php echo $row; ?></td>
+                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
                                         <?php endforeach; ?>
                                         </tr>
                                     <?php endforeach; ?>

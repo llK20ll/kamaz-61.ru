@@ -581,3 +581,11 @@ margin: 0 10px 0 10px ;
     color: #111;
     font-weight: 700;
 }
+.product__tabel__cell{
+    width: 50%;;
+}
+.product__tabel__cell__text{
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
