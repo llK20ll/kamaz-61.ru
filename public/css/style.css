@@ -589,3 +589,9 @@ margin: 0 10px 0 10px ;
     padding: 0;
     white-space: pre-wrap;
 }
+.product__tabel__cell__admin{
+    width: 75%;;
+}
+.product__tabel__caption__admin{
+    width: 25%;;
+}
