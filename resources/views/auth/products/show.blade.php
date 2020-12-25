@@ -56,51 +56,51 @@
             </tr>
 
             <tr>
-                <td>Параметры карточки:</td>
+                <td class="product__tabel__caption__admin">Параметры карточки:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->card_params }}</span></td>
             </tr>
             <tr>
-                <td>Характеристики автомобиля:</td>
+                <td class="product__tabel__caption__admin">Характеристики автомобиля:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->vehicle_characteristics_params }}</span> </td>
             </tr>       
             <tr>
-                <td>Весовые параметры, нагрузки:</td>
+                <td class="product__tabel__caption__admin">Весовые параметры, нагрузки:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->weight_parameters_loads_params }} </span></td>
             </tr>         
             <tr>
-                <td>Двигатель:</td>
+                <td class="product__tabel__caption__admin">Двигатель:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->engine_params }}</span> </td>
             </tr>      
             <tr>
-                <td>Коробка передач:</td>
+                <td class="product__tabel__caption__admin">Коробка передач:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->gearbox_params }} </span></td>
             </tr>
             <tr>
-                <td>Кабина:</td>
+                <td class="product__tabel__caption__admin">Кабина:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->cabin_params }}</span> </td>
             </tr>
             <tr>
-                <td>Характеристики шасси:</td>
+                <td class="product__tabel__caption__admin">Характеристики шасси:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->chassis_characteristics_params }}</span> </td>
             </tr>
             <tr>
-                <td>Дополнительно:</td>
+                <td class="product__tabel__caption__admin">Дополнительно:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->additionally_params }}</span> </td>
             </tr>
             <tr>
-                <td>Кабина:</td>
+                <td class="product__tabel__caption__admin">Кабина:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->cabin_params }}</span> </td>
             </tr>
             <tr>
-                <td>Характеристики полуприцепа:</td>
+                <td class="product__tabel__caption__admin">Характеристики полуприцепа:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->semi_trailer_characteristics_params }}</span> </td>
             </tr>
             <tr>
-                <td>Совместимые тягачи:</td>
+                <td class="product__tabel__caption__admin">Совместимые тягачи:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->compatible_tractors_params }} </span></td>
             </tr>
             <tr>
-                <td>Характеристики прицепа:</td>
+                <td class="product__tabel__caption__admin">Характеристики прицепа:</td>
                 <td class="product__tabel__cell__admin"><span class="product__tabel__cell__text">{{ $product->trailer_characteristics_params }} </span></td>
             </tr>
         </tbody>
