@@ -552,16 +552,7 @@ margin: 0 10px 0 10px ;
     object-fit: cover;
     position: relative;
 }
-.product__img{
-    position: relative;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-    opacity: 1; 
-    display: block;
-    height: auto;
-    max-width: 100%;    
-}
+
 .serchresult__img{
     height: 80px;
 }
@@ -592,6 +583,13 @@ margin: 0 10px 0 10px ;
 .product__tabel__cell__admin{
     width: 75%;;
 }
-.product__tabel__caption__admin{
-    width: 25%;;
+.product__img{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 1; 
+    display: block;
+    height: auto;
+    max-width: 100%;
 }

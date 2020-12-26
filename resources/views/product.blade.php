@@ -65,17 +65,17 @@
                 
                 <!-- Модальное окно -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        {{-- <div class="modal-header">
                             <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
                             <span aria-hidden="true">×</span>
                         </button>
                         
-                        </div>
+                        </div> --}}
                         <div class="modal-body">
-                            <img class="product__img" src="
+                            <img class="product__img img-fluid" src="
                             @if($item->image == null)
                             {{ asset('/img/no-image-available.png') }}      
                             @else

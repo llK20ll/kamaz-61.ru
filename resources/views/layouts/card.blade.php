@@ -3,14 +3,15 @@
     <a href="{{route('product', [$product->category, $product])}}"><h5 class="card-title text-truncate">{{$product->model}}</h5></a>
     
       <div class="cards-image">
-        <img src="
-        @if($product->image == null)
-        {{ asset('/img/no-image-available.png') }}      
-        @else
-        {{ Storage::url($product->image) }}
-        @endif
-        " alt="{{$product->model ?? ''}}">
-
+        <a href="{{route('product', [$product->category, $product])}}">
+          <img src="
+          @if($product->image == null)
+          {{ asset('/img/no-image-available.png') }}      
+          @else
+          {{ Storage::url($product->image) }}
+          @endif
+          " alt="{{$product->model ?? ''}}">
+        </a>
         @admin
         <div class="wrench">
           <a href="{{ route('products.edit', $product) }}" >
