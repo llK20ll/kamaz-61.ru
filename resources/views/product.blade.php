@@ -10,6 +10,9 @@
     
     <div class="col-12 col-sm-12 col-lg-3 align-self-center  py-3">
         <span>Модель: {{ $item->model }}</span>
+
+
+
     </div>
 
     <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center py-3">
@@ -31,6 +34,7 @@
     @endisset
 
     <div class="col-12 col-sm-12 col-lg-2 align-self-center py-3 px-4">
+        <div class="btn-group" role="group">
         <form action="{{route('basket-add', $item)}}" method="POST">
             <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
             <span class="align-middle">
@@ -41,31 +45,34 @@
             
             </span>       
             </button> 
+   
         @csrf     
         </form>
+        </div>
     </div>    
     
 </div>
 
 {{-- таблиц характеристик --}}
-    <div class="card-body p-0 mt-1">
-        <div class="row">
+<div class="card-body p-0 mt-1">
+    <div class="row">
 
-            <div class="col-sm-4 p-1">
-                <!-- Кнопка, открывающее модальное окно -->
-                <div data-toggle="modal" data-target="#myModal">
-                    <img src="
-                    @if($item->image == null)
-                    {{ asset('/img/no-image-available.png') }}      
-                    @else
-                    {{ Storage::url($item->image) }}
-                    @endif
-                    " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">                        
-                </div>
-                
-                <!-- Модальное окно -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="col-sm-4 p-1">
+            <!-- Кнопка, открывающее модальное окно -->
+            <div data-toggle="modal" data-target="#myModal">
+                <img src="
+                @if($item->image == null)
+                {{ asset('/img/no-image-available.png') }}      
+                @else
+                {{ Storage::url($item->image) }}
+                @endif
+                " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
+                                
+            </div>
+            
+            <!-- Модальное окно -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
                         {{-- <div class="modal-header">
                             <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
@@ -82,431 +89,422 @@
                             {{ Storage::url($item->image) }}
                             @endif
                             " alt="{{$item->model ?? ''}}">
-                            @admin
-                            <div class="wrench">
-                              <a href="{{ route('products.edit', $item) }}" >
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z"/>
-                                </svg> 
-                              </a>
-                            </div>  
-                            @endadmin
                         </div>
-                    </div>
-                    </div>
-                </div>  
-
-                <div class="row m-0">
-                    <div class="card m-3 w-100 card-info rg-text">
-
-                        <div class="card-header truckInfoTabHead">Основные параметры</div>
-                                           
-                        <table  class="main-params-table">    
-                            <?php 
-                            $params = explode("!", $item->card_params);
-
-                            $array = array_chunk($params, 2);
-                            ?>
-                            <?php foreach ($array as $items): ?>
-                                <tr>
-                                <?php foreach ($items as $row): ?>
-                                    <td><?php echo $row; ?></td>
-                                <?php endforeach; ?>
-                                </tr>
-                            <?php endforeach; ?>
-                            
-                        </table>
                     </div>
                 </div>
+            </div>  
 
+            <div class="row m-0">
+                <div class="card m-3 w-100 card-info rg-text">
 
-                {{-- PDF  --}}
-                    {{-- <div class="row m-0">
-                    <div class="card m-3 card-info w-100">
+                    <div class="card-header truckInfoTabHead">Основные параметры</div>
+                                        
+                    <table  class="main-params-table">    
+                        <?php 
+                        $params = explode("!", $item->card_params);
 
-                        <div class="card-header truckInfoTabHead"><div>Полезная информация</div></div>
-
-                        <div class="card-body">
-                            <table class="width=&quot;100%&quot;">
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">
-                                            <a target="_blank" href="#">
-                                                <!--<img width="50px" height="auto" class="img-view img-thumbnail" src="../../images/pdf-otts.png">-->
-                                                <object height="59" type="image/svg+xml" data="{{ asset('img/pdf-document.svg') }}">
-                                                    <!--<img src="img/logo.png">-->
-                                                </object>
-                                            </a>
-                                        </td>
-                                        <td class="pl-2">
-                                            <a target="_blank" href="#">Скачать ОТТС ТС RU К-RU.МТ02.00144.Р3 (с 2018-12-08 по 2021-12-07)</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div> --}}
+                        $array = array_chunk($params, 2);
+                        ?>
+                        <?php foreach ($array as $items): ?>
+                            <tr>
+                            <?php foreach ($items as $row): ?>
+                                <td><?php echo $row; ?></td>
+                            <?php endforeach; ?>
+                            </tr>
+                        <?php endforeach; ?>
+                        
+                    </table>
+                </div>
             </div>
 
-            <div class="col-sm-8">
-                <div class="p-3 w-100 h-100" style="margin-left: auto; margin-right: auto;">
-                    <div class="tbl-content-view bg-light">
-                        <table class="table">
+
+            {{-- PDF  --}}
+                {{-- <div class="row m-0">
+                <div class="card m-3 card-info w-100">
+
+                    <div class="card-header truckInfoTabHead"><div>Полезная информация</div></div>
+
+                    <div class="card-body">
+                        <table class="width=&quot;100%&quot;">
                             <tbody>
-
-                                {{-- Характеристики автомобиля --}}
-                                @isset($item->vehicle_characteristics_params)                               
-                                
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Характеристики автомобиля</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
+                                <tr>
+                                    <td class="text-center">
+                                        <a target="_blank" href="#">
+                                            <!--<img width="50px" height="auto" class="img-view img-thumbnail" src="../../images/pdf-otts.png">-->
+                                            <object height="59" type="image/svg+xml" data="{{ asset('img/pdf-document.svg') }}">
+                                                <!--<img src="img/logo.png">-->
+                                            </object>
+                                        </a>
                                     </td>
-                                </tr>                           
-
-                                <?php 
-
-                                $string = $item->vehicle_characteristics_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Характеристики автомобиля --}}
-                                
-
-                                {{-- Весовые параметры, нагрузки --}}
-                                @isset($item->weight_parameters_loads_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Весовые параметры, нагрузки</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
+                                    <td class="pl-2">
+                                        <a target="_blank" href="#">Скачать ОТТС ТС RU К-RU.МТ02.00144.Р3 (с 2018-12-08 по 2021-12-07)</a>
                                     </td>
-                                </tr>                           
-
-                                <?php
-                                $string = $item->weight_parameters_loads_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Весовые параметры, нагрузки --}}
-
-
-                                {{-- Двигатель --}}
-                                @isset($item->engine_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Двигатель</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-                                <?php
-                                $string = $item->engine_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Двигатель --}}
-
-                                {{-- Коробка передач --}}
-                                @isset($item->gearbox_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Коробка передач</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-    
-                                $string = $item->gearbox_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Коробка передач --}}
-
-                                {{-- Кабина --}}
-                                @isset($item->cabin_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Кабина</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-
-                                $string = $item->cabin_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Кабина --}}
-
-                                {{-- Характеристики шасси --}}
-                                @isset($item->chassis_characteristics_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Характеристики шасси</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-
-                                $string = $item->chassis_characteristics_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Характеристики шасси --}}
-
-                                {{-- Дополнительно --}}
-                                @isset($item->additionally_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Дополнительно</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-                                $string = $item->additionally_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Дополнительно --}}
-
-                                {{-- Характеристики полуприцепа --}}
-                                @isset($item->semi_trailer_characteristics_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Характеристики полуприцепа</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-
-                                $string = $item->semi_trailer_characteristics_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Характеристики полуприцепа --}}                            
-
-
-
-                                {{-- Характеристики прицепа --}}
-                                @isset($item->trailer_characteristics_params)                               
-
-                                <tr class="toogle-sh-1 disable-hide bg-nrg-41">
-                                    <td colspan="2" class="text-center tableCaption">
-                                        
-                                        <i>Характеристики прицепа</i>
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                                        </svg>
-
-                                    </td>
-                                </tr>                           
-
-                                <?php 
-                            
-
-                                $string = $item->trailer_characteristics_params;
-                                $separator = "\t\n";
-                                
-                                $array_words = [];
-                                $tok = strtok($string, $separator);
-                                
-                                while($tok) {
-                                    $array_words[] = $tok;
-                                    $tok = strtok($separator);
-                                }
-                                // var_dump($array_words);
-                                $array = array_chunk($array_words, 2); ?>
-                                    <?php foreach ($array as $items): ?>
-                                        <tr>
-                                        <?php foreach ($items as $row): ?>
-                                            <td class="product__tabel__cell"><?php echo $row; ?></td>
-                                        <?php endforeach; ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                @endisset                          
-                                {{-- Характеристики прицепа --}}
-
-                
-
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </div> --}}
+        </div>
+
+        <div class="col-sm-8">
+            <div class="p-3 w-100 h-100" style="margin-left: auto; margin-right: auto;">
+                <div class="tbl-content-view bg-light">
+                    <table class="table">
+                        <tbody>
+
+                            {{-- Характеристики автомобиля --}}
+                            @isset($item->vehicle_characteristics_params)                               
+                            
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Характеристики автомобиля</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+
+                            $string = $item->vehicle_characteristics_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Характеристики автомобиля --}}
+                            
+
+                            {{-- Весовые параметры, нагрузки --}}
+                            @isset($item->weight_parameters_loads_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Весовые параметры, нагрузки</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php
+                            $string = $item->weight_parameters_loads_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Весовые параметры, нагрузки --}}
+
+
+                            {{-- Двигатель --}}
+                            @isset($item->engine_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Двигатель</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+                            <?php
+                            $string = $item->engine_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Двигатель --}}
+
+                            {{-- Коробка передач --}}
+                            @isset($item->gearbox_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Коробка передач</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+
+                            $string = $item->gearbox_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Коробка передач --}}
+
+                            {{-- Кабина --}}
+                            @isset($item->cabin_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Кабина</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+
+                            $string = $item->cabin_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Кабина --}}
+
+                            {{-- Характеристики шасси --}}
+                            @isset($item->chassis_characteristics_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Характеристики шасси</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+
+                            $string = $item->chassis_characteristics_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Характеристики шасси --}}
+
+                            {{-- Дополнительно --}}
+                            @isset($item->additionally_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Дополнительно</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+                            $string = $item->additionally_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Дополнительно --}}
+
+                            {{-- Характеристики полуприцепа --}}
+                            @isset($item->semi_trailer_characteristics_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Характеристики полуприцепа</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+
+                            $string = $item->semi_trailer_characteristics_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Характеристики полуприцепа --}}                            
+
+
+
+                            {{-- Характеристики прицепа --}}
+                            @isset($item->trailer_characteristics_params)                               
+
+                            <tr class="toogle-sh-1 disable-hide bg-nrg-41">
+                                <td colspan="2" class="text-center tableCaption">
+                                    
+                                    <i>Характеристики прицепа</i>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+
+                                </td>
+                            </tr>                           
+
+                            <?php 
+                        
+
+                            $string = $item->trailer_characteristics_params;
+                            $separator = "\t\n";
+                            
+                            $array_words = [];
+                            $tok = strtok($string, $separator);
+                            
+                            while($tok) {
+                                $array_words[] = $tok;
+                                $tok = strtok($separator);
+                            }
+                            // var_dump($array_words);
+                            $array = array_chunk($array_words, 2); ?>
+                                <?php foreach ($array as $items): ?>
+                                    <tr>
+                                    <?php foreach ($items as $row): ?>
+                                        <td class="product__tabel__cell"><?php echo $row; ?></td>
+                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            @endisset                          
+                            {{-- Характеристики прицепа --}}
+
+            
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 {{-- таблиц характеристик --}}
 @endsection  
