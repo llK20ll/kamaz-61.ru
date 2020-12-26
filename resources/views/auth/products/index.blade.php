@@ -54,7 +54,7 @@
             </td>
 
 
-            <td class="align-middle" style="vertical-align: middle;">{{ $product->category->title }}</td>
+            <td class="align-middle" style="vertical-align: middle;"><a href="{{ route('category', $product->category->code) }}"> {{ $product->category->title }}</a></td>
 
 
             <td class="align-middle">
