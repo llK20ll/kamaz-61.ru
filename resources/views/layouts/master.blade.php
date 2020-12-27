@@ -266,7 +266,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
         {{-- снег --}}
+        @if(Route::currentRouteName() != 'product')
         <script src="https://daruse.ru/assets/js/snowfall.js"></script>
+
         <script type="text/javascript">
             $(document).snowfall({
             flakeCount: 50,
@@ -277,6 +279,7 @@
             shadow: false,
         });
         </script>
+        @endif
          {{-- снег --}}
     </body>
 </html>
