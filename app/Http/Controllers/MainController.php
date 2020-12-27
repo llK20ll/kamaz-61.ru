@@ -32,10 +32,9 @@ class MainController extends Controller
         return view('category', compact('categories','category', 'products'));
     }
 
-    public function product($category, $product = null){
-        $cat = Category::where('id', $category)->first();
-        $item = Product::where('id', $product)->firstOrFail();
-        return view('product', compact('item', 'cat'));
+    public function product($category, $product = null){        
+        $product = Product::where('id', $product)->firstOrFail();
+        return view('product', compact('product'));
     }
 
     public function leasing(){

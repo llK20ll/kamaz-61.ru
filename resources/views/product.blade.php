@@ -1,38 +1,38 @@
 @extends('layouts.master')
 
-@section('meta_description', 'На kamaz-61.ru можно купить ' .  $item->model . ' по самой выгодной цене в Южном Федеральном Округе. Консультации по выбору +7-906-181-50-14')    
+@section('meta_description', 'На kamaz-61.ru можно купить ' .  $product->model . ' по самой выгодной цене в Южном Федеральном Округе. Консультации по выбору +7-906-181-50-14')    
 
-@section('title', 'Продажа - ' . $cat->title . ' КАМАЗ - ' . $item->model . ' - цены, фото, технические характеристики у официального дилера КАМАЗ')
+@section('title', 'Продажа - ' . $product->category->title . ' КАМАЗ - ' . $product->model . ' - цены, фото, технические характеристики у официального дилера КАМАЗ')
 
 @section('content')
 
 <div class="d-flex row justify-content-between wrapper text-center product__head pr-2">
     
     <div class="col-12 col-sm-12 col-lg-3 align-self-center  py-3">
-        <span>Модель: {{ $item->model }}</span>
+        <span>Модель: {{ $product->model }}</span>
     </div>
 
     <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center py-3">
         Цена:
         <span
-        @isset($item->new_price)
+        @isset($product->new_price)
         style="text-decoration: line-through;"        
         @endisset         
-        >{{ number_format($item->price)}}</span> руб.
+        >{{ number_format($product->price)}}</span> руб.
     </div>
 
-    @isset($item->new_price)
+    @isset($product->new_price)
         <div class="col-12 col-sm-12 col-lg-4 align-self-center py-3">
             <div>
             <b style="color: red">СПЕЦПРЕДЛОЖЕНИЕ: </b>
-            <span class="badge badge-success" style="font-size: 17px">{{ number_format($item->new_price)}}</span> руб.
+            <span class="badge badge-success" style="font-size: 17px">{{ number_format($product->new_price)}}</span> руб.
             </div>
         </div>
     @endisset
 
     <div class="col-12 col-sm-12 col-lg-2 align-self-center py-3 px-4">
         <div class="btn-group" role="group">
-        <form action="{{route('basket-add', $item)}}" method="POST">
+        <form action="{{route('basket-add', $product)}}" method="POST">
             <button type="submit" class="btn btn-outline-primary w-100 cardbtn text-center" role="button" title="Купить">
             <span class="align-middle">
             Купить 
@@ -70,17 +70,17 @@
 
             <a href="#img1">
                 <img src="
-                @if($item->image == null)
+                @if($product->image == null)
                 {{ asset('/img/no-image-available.png') }}      
                 @else
-                {{ Storage::url($item->image) }}
+                {{ Storage::url($product->image) }}
                 @endif
-                " alt="{{$item->model ?? ''}}" class="p-3">
+                " alt="{{$product->model ?? ''}}" class="p-3">
               </a>
               
               <!-- lightbox container hidden with CSS -->
               <a href="#" class="lightbox" id="img1">
-                <span style="background-image: url('{{ Storage::url($item->image) }}')"></span>
+                <span style="background-image: url('{{ Storage::url($product->image) }}')"></span>
               </a>
             
               {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -114,7 +114,7 @@
                                         
                     <table  class="main-params-table">    
                         <?php 
-                        $params = explode("!", $item->card_params);
+                        $params = explode("!", $product->card_params);
 
                         $array = array_chunk($params, 2);
                         ?>
@@ -167,7 +167,7 @@
                         <tbody>
 
                             {{-- Характеристики автомобиля --}}
-                            @isset($item->vehicle_characteristics_params)                               
+                            @isset($product->vehicle_characteristics_params)                               
                             
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -182,7 +182,7 @@
 
                             <?php 
 
-                            $string = $item->vehicle_characteristics_params;
+                            $string = $product->vehicle_characteristics_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -206,7 +206,7 @@
                             
 
                             {{-- Весовые параметры, нагрузки --}}
-                            @isset($item->weight_parameters_loads_params)                               
+                            @isset($product->weight_parameters_loads_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -220,7 +220,7 @@
                             </tr>                           
 
                             <?php
-                            $string = $item->weight_parameters_loads_params;
+                            $string = $product->weight_parameters_loads_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -244,7 +244,7 @@
 
 
                             {{-- Двигатель --}}
-                            @isset($item->engine_params)                               
+                            @isset($product->engine_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -257,7 +257,7 @@
                                 </td>
                             </tr>                           
                             <?php
-                            $string = $item->engine_params;
+                            $string = $product->engine_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -280,7 +280,7 @@
                             {{-- Двигатель --}}
 
                             {{-- Коробка передач --}}
-                            @isset($item->gearbox_params)                               
+                            @isset($product->gearbox_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -295,7 +295,7 @@
 
                             <?php 
 
-                            $string = $item->gearbox_params;
+                            $string = $product->gearbox_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -318,7 +318,7 @@
                             {{-- Коробка передач --}}
 
                             {{-- Кабина --}}
-                            @isset($item->cabin_params)                               
+                            @isset($product->cabin_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -333,7 +333,7 @@
 
                             <?php 
 
-                            $string = $item->cabin_params;
+                            $string = $product->cabin_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -356,7 +356,7 @@
                             {{-- Кабина --}}
 
                             {{-- Характеристики шасси --}}
-                            @isset($item->chassis_characteristics_params)                               
+                            @isset($product->chassis_characteristics_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -371,7 +371,7 @@
 
                             <?php 
 
-                            $string = $item->chassis_characteristics_params;
+                            $string = $product->chassis_characteristics_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -394,7 +394,7 @@
                             {{-- Характеристики шасси --}}
 
                             {{-- Дополнительно --}}
-                            @isset($item->additionally_params)                               
+                            @isset($product->additionally_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -408,7 +408,7 @@
                             </tr>                           
 
                             <?php 
-                            $string = $item->additionally_params;
+                            $string = $product->additionally_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -431,7 +431,7 @@
                             {{-- Дополнительно --}}
 
                             {{-- Характеристики полуприцепа --}}
-                            @isset($item->semi_trailer_characteristics_params)                               
+                            @isset($product->semi_trailer_characteristics_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -446,7 +446,7 @@
 
                             <?php 
 
-                            $string = $item->semi_trailer_characteristics_params;
+                            $string = $product->semi_trailer_characteristics_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -471,7 +471,7 @@
 
 
                             {{-- Характеристики прицепа --}}
-                            @isset($item->trailer_characteristics_params)                               
+                            @isset($product->trailer_characteristics_params)                               
 
                             <tr class="toogle-sh-1 disable-hide bg-nrg-41">
                                 <td colspan="2" class="text-center tableCaption">
@@ -487,7 +487,7 @@
                             <?php 
                         
 
-                            $string = $item->trailer_characteristics_params;
+                            $string = $product->trailer_characteristics_params;
                             $separator = "\t\n";
                             
                             $array_words = [];
@@ -520,4 +520,5 @@
 </div>
 
 {{-- таблиц характеристик --}}
+
 @endsection  
