@@ -10,9 +10,6 @@
     
     <div class="col-12 col-sm-12 col-lg-3 align-self-center  py-3">
         <span>Модель: {{ $item->model }}</span>
-
-
-
     </div>
 
     <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center py-3">
@@ -58,7 +55,7 @@
 
         <div class="col-sm-4 p-1">
             <!-- Кнопка, открывающее модальное окно -->
-            <div data-toggle="modal" data-target="#myModal">
+            {{-- <div data-toggle="modal" data-target="#myModal">
                 <img src="
                 @if($item->image == null)
                 {{ asset('/img/no-image-available.png') }}      
@@ -67,19 +64,36 @@
                 @endif
                 " alt="{{$item->model ?? ''}}" class="p-3" style="width: 477px; position: relative; left: 0px; top: 0px; z-index: 1; opacity: 1; ">
                                 
-            </div>
+            </div> --}}
             
             <!-- Модальное окно -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <a href="#img1">
+                <img src="
+                @if($item->image == null)
+                {{ asset('/img/no-image-available.png') }}      
+                @else
+                {{ Storage::url($item->image) }}
+                @endif
+                " alt="{{$item->model ?? ''}}" class="p-3">
+              </a>
+              
+              <!-- lightbox container hidden with CSS -->
+              <a href="#" class="lightbox" id="img1">
+                <span style="background-image: url('{{ Storage::url($item->image) }}')"></span>
+              </a>
+            
+              {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        {{-- <div class="modal-header">
+                        <div class="modal-header">
                             <h4 class="modal-title" id="myModalLabel">Модель: {{ $item->model }}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
                             <span aria-hidden="true">×</span>
                         </button>
                         
-                        </div> --}}
+                        </div>
+                        
                         <div class="modal-body">
                             <img class="product__img img-fluid" src="
                             @if($item->image == null)
@@ -91,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>   --}}
 
             <div class="row m-0">
                 <div class="card m-3 w-100 card-info rg-text">
