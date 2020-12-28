@@ -49,7 +49,13 @@
                 @isset($product->new_price)               
                 <span class="badge badge-success" style="font-size: 17px">{{ number_format($product->new_price)}}  руб.</span>
                 @else
-                <span>{{ number_format( $product->price ?? '' )}} руб.</span>
+                <span>
+                    @if($product->price == 1)
+                    Нет цены
+                    @else
+                    {{ number_format( $product->price ?? '' )}} руб.
+                    @endif
+                </span>
                 @endisset
             </td>
 

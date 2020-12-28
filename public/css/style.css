@@ -629,3 +629,12 @@ margin: 0 10px 0 10px ;
     background-repeat: no-repeat;
     background-size: contain;
   }
+
+  .price__request{
+    text-decoration: underline;
+   
+  }
+  .price__request:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
