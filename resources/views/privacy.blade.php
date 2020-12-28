@@ -4,7 +4,7 @@
 
 @section('content')
  
-<div class="policy">
+<div class="policy p-4">
 
 <h3>Политика в отношении обработки персональных данных</h3>
 <br>
