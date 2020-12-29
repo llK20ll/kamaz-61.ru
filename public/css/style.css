@@ -638,3 +638,6 @@ margin: 0 10px 0 10px ;
     text-decoration: underline;
     cursor: pointer;
   }
+  .container__slider{
+      max-width: 900px;
+  }
