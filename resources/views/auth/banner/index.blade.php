@@ -9,7 +9,7 @@
         <tbody>
             <tr>
      
-                <th class="text-center align-middle tableCaption">
+                <th class="text-center align-middle tableCaption" style="min-width: 300px">
                     Баннер
                 </th>
                 <th class="text-center align-middle tableCaption" style="max-width: 400px">
@@ -29,7 +29,7 @@
            
 
             <td class="text-center align-middle" style="width: 45%"> 
-                <img style="vertical-align: middle; width:100%" src="
+                <img class="w-100" style="vertical-align: middle;" src="
                 @if($banner->image == null)
                 {{ asset('/img/no-image-available.png') }}      
                 @else
