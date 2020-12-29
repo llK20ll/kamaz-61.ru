@@ -22,7 +22,7 @@
             active 
             @endif
             ">
-            <a href="{{$banners[$i]->link}}"><img src="{{ Storage::url($banners[$i]->image)}}" alt="{{$banners[$i]->link}}" class="d-block w-100"></a>                  
+            <a href="{{$banners[$i]->link}}"><img src="{{ Storage::url($banners[$i]->image)}}" alt="{{$banners[$i]->link}}" class="d-block" width="950" height="413"></a>                  
             </div>
             @endfor                
 
