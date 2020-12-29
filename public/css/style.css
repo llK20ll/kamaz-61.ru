@@ -53,6 +53,7 @@ color: red;
 /*ЛОГОТИП<*/
 .logo {
     width: 48px;
+    min-width: 48px;
     height: 66px;
     /* Подключаем свойство transform-style для 3D */
     transform-style: preserve-3d;
@@ -68,10 +69,12 @@ color: red;
 }
 .logo-static-vts {
     width: 88px;
+    min-width: 88px;
     height: 66px;
 }
 .logo-ac{
     width: 126px;
+    min-width: 126px;
     height: 66px;
 }
 /*>ЛОГОТИП*/
@@ -137,7 +140,6 @@ ul li nav-item:hover {
 }
 .header-phone{
     text-align: center; 
-    margin: auto;
     padding-left: 10px;
     display: block;
 }
