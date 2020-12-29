@@ -29,7 +29,7 @@
            
 
             <td class="text-center align-middle" style="width: 45%"> 
-                <img class="w-100" style="vertical-align: middle;" src="
+                <img style="vertical-align: middle; width:100%" src="
                 @if($banner->image == null)
                 {{ asset('/img/no-image-available.png') }}      
                 @else
