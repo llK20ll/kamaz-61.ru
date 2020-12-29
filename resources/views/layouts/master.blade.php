@@ -41,7 +41,7 @@
                     </a>
                 </div> 
                 
-                    <div class="logo col-xs-3 ">
+                    <div class="logo col-xs-3 mx-2">
                         <a href="{{route('index')}}">
                             <img src="{{ asset('img/konik.png') }}" width="48px" alt="kamaz-61.ru">  
                         </a>                    
@@ -88,7 +88,7 @@
                         {{-- //---------- --}}
                         <div>                   
                             @auth                 
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right text-truncate">
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-center" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         @admin
