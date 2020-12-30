@@ -103,14 +103,14 @@
 </div>
 
 {{-- таблиц характеристик --}}
-<div class="card-body p-0 mt-1">
+<div class="container mt-1">
     <div class="row">
 
         <div class="col-sm-4 p-1">
             <!-- Модальное окно -->
 
             <a href="#img1">
-                <img src="
+                <img class="w-100 mb-3 mt-1" src="
                 @if($product->image == null)
                 {{ asset('/img/no-image-available.png') }}      
                 @else
@@ -125,9 +125,9 @@
               </a>
 
             <div class="row m-0">
-                <div class="card m-3 w-100 card-info rg-text">
+                <div class="card w-100 mt-2 rg-text">
 
-                    <div class="card-header truckInfoTabHead">Основные параметры</div>
+                    <div class="truckInfoTabHead p-2">Основные параметры</div>
                                         
                     <table  class="main-params-table">    
                         <?php 
@@ -178,7 +178,7 @@
         </div>
 
         <div class="col-sm-8">
-            <div class="p-3 w-100 h-100" style="margin-left: auto; margin-right: auto;">
+            <div class="pt-2 w-100 h-100" style="margin-left: auto; margin-right: auto;">
                 <div class="tbl-content-view bg-light">
                     <table class="table">
                         <tbody>
