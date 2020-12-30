@@ -12,7 +12,7 @@
         <span>Модель: {{ $product->model }}</span>
     </div>
 
-    <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center py-3">
+    <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center">
         Цена:
         <span
         @isset($product->new_price)
@@ -106,7 +106,7 @@
 <div class="container mt-1">
     <div class="row">
 
-        <div class="col-sm-4 p-1">
+        <div class="col-sm-4">
             <!-- Модальное окно -->
 
             <a href="#img1">
