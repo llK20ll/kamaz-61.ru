@@ -1,4 +1,4 @@
-<div class="mx-3 p-3">
+<div class="my-3 p-3">
     <form type="get" class="form-inline" action="{{ route('search') }}">
         <div class="form-group mx-sm-3">
             <input type="text" class="form-control" name="s" id="s" placeholder="Поиск по модели...">
