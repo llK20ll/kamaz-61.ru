@@ -103,7 +103,7 @@
 </div>
 
 {{-- таблиц характеристик --}}
-<div class="container pt-4">
+<div class="container pt-4 mb-4">
     <div class="row">
 
         <div class="col-sm-4">
