@@ -6,9 +6,9 @@
 
 @section('content')
 
-<div class="d-flex row justify-content-between wrapper text-center product__head pr-2">
+<div class="d-flex row justify-content-between wrapper text-center product__head pr-2 mt-4">
     
-    <div class="col-12 col-sm-12 col-lg-3 align-self-center  py-3">
+    <div class="col-12 col-sm-12 col-lg-3 align-self-center">
         <span>Модель: {{ $product->model }}</span>
     </div>
 
