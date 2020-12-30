@@ -103,14 +103,14 @@
 </div>
 
 {{-- таблиц характеристик --}}
-<div class="container mt-1">
+<div class="container pt-4">
     <div class="row">
 
         <div class="col-sm-4">
             <!-- Модальное окно -->
 
             <a href="#img1">
-                <img class="w-100 mb-3 mt-1" src="
+                <img class="w-100 mb-3" src="
                 @if($product->image == null)
                 {{ asset('/img/no-image-available.png') }}      
                 @else
@@ -178,7 +178,7 @@
         </div>
 
         <div class="col-sm-8">
-            <div class="pt-2 w-100 h-100" style="margin-left: auto; margin-right: auto;">
+            <div class="w-100 h-100" style="margin-left: auto; margin-right: auto;">
                 <div class="tbl-content-view bg-light">
                     <table class="table">
                         <tbody>
