@@ -1,6 +1,6 @@
 
 
-<div class="container p-0" style="max-width: 950px; box-shadow: 0 2px 20px #5a5a5a; border: 1px solid #6c7c99;" >
+<div class="container p-0 m-0" style="max-width: 950px; box-shadow: 0 2px 20px #5a5a5a; border: 1px solid #6c7c99;" >
 
 <script src="js/carousel.js"></script>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="z-index: 0;" data-interval="10000">
@@ -22,7 +22,7 @@
             active 
             @endif
             ">
-            <a href="{{$banners[$i]->link}}"><img src="{{ Storage::url($banners[$i]->image)}}" alt="{{$banners[$i]->link}}" class=" p-0 d-block w-100"></a>                  
+            <a href="{{$banners[$i]->link}}"><img src="{{ Storage::url($banners[$i]->image)}}" alt="{{$banners[$i]->link}}" class=" d-block w-100"></a>                  
             </div>
             @endfor                
 
