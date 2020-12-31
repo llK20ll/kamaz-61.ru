@@ -8,11 +8,11 @@
 
 <div class="d-flex row justify-content-between wrapper text-center product__head mx-4 mt-4">
     
-    <div class="col-12 col-sm-12 col-lg-3 align-self-center">
+    <div class="col-12 col-sm-12 col-lg-3  py-3 align-self-center">
         <span>Модель: {{ $product->model }}</span>
     </div>
 
-    <div class="col-12 col-sm-12 col-lg-3 col-xs-12 align-self-center">
+    <div class="col-12 col-sm-12 col-lg-3 col-xs-12  py-3 align-self-center">
         Цена:
         <span
         @isset($product->new_price)
