@@ -125,7 +125,7 @@
             </a>
 
             <div class="row m-0">
-                <div class="card w-100 mt-2 rg-text mb-2">
+                <div class="card w-100 mt-2 rg-text mb-3">
 
                     <div class="truckInfoTabHead p-2">Основные параметры</div>
                                         
