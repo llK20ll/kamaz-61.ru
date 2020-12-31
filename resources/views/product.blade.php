@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="d-flex row justify-content-between wrapper text-center product__head pr-2 mt-4">
+<div class="d-flex row justify-content-between wrapper text-center product__head mx-4 mt-4">
     
     <div class="col-12 col-sm-12 col-lg-3 align-self-center">
         <span>Модель: {{ $product->model }}</span>
@@ -108,21 +108,21 @@
 
         <div class="col-sm-4">
             <!-- Модальное окно -->
-
+            
             <a href="#img1">
-                <img class="w-100 mb-3" src="
-                @if($product->image == null)
-                {{ asset('/img/no-image-available.png') }}      
-                @else
-                {{ Storage::url($product->image) }}
-                @endif
-                " alt="{{$product->model ?? ''}}" class="p-3">
-              </a>
+            <img class="scale w-100 mb-3" src="
+            @if($product->image == null)
+            {{ asset('/img/no-image-available.png') }}      
+            @else
+            {{ Storage::url($product->image) }}
+            @endif
+            " alt="{{$product->model ?? ''}}" class="p-3">
+            </a>
               
-              <!-- lightbox container hidden with CSS -->
-              <a href="#" class="lightbox" id="img1">
-                <span style="background-image: url('{{ Storage::url($product->image) }}')"></span>
-              </a>
+            <!-- lightbox container hidden with CSS -->
+            <a href="#" class="lightbox" id="img1">
+            <span style="background-image: url('{{ Storage::url($product->image) }}')"></span>
+            </a>
 
             <div class="row m-0">
                 <div class="card w-100 mt-2 rg-text">
